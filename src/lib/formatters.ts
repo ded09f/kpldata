@@ -1,16 +1,27 @@
 import type { FormatKind, SeasonDetail, SeasonSummary, Team } from '@/types'
 
+const SHANGHAI = 'Asia/Shanghai'
+
 export function formatDate(iso: string | undefined, withTime = false): string {
   if (!iso) return '—'
   const d = new Date(iso)
   if (Number.isNaN(d.getTime())) return iso
-  const y = d.getFullYear()
-  const m = String(d.getMonth() + 1).padStart(2, '0')
-  const day = String(d.getDate()).padStart(2, '0')
-  if (!withTime) return `${y}-${m}-${day}`
-  const hh = String(d.getHours()).padStart(2, '0')
-  const mm = String(d.getMinutes()).padStart(2, '0')
-  return `${y}-${m}-${day} ${hh}:${mm}`
+  const opts: Intl.DateTimeFormatOptions = {
+    timeZone: SHANGHAI,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }
+  if (withTime) {
+    opts.hour = '2-digit'
+    opts.minute = '2-digit'
+    opts.hour12 = false
+  }
+  const parts = new Intl.DateTimeFormat('en-CA', opts).formatToParts(d)
+  const get = (type: string) => parts.find((p) => p.type === type)?.value ?? ''
+  const date = `${get('year')}-${get('month')}-${get('day')}`
+  if (!withTime) return date
+  return `${date} ${get('hour')}:${get('minute')}`
 }
 
 export function pct(n: number, digits = 1): string {
