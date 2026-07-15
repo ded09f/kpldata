@@ -611,6 +611,18 @@
           "group": "B",
           "rows": [
             {
+              "teamId": "wst",
+              "played": 2,
+              "wins": 2,
+              "losses": 0,
+              "points": 2,
+              "gameWins": 5,
+              "gameLosses": 2,
+              "gameDiff": 3,
+              "rank": 1,
+              "qualification": "seat-AB"
+            },
+            {
               "teamId": "drg",
               "played": 1,
               "wins": 1,
@@ -619,30 +631,18 @@
               "gameWins": 3,
               "gameLosses": 0,
               "gameDiff": 3,
-              "rank": 1,
-              "qualification": "seat-AB"
-            },
-            {
-              "teamId": "wst",
-              "played": 1,
-              "wins": 1,
-              "losses": 0,
-              "points": 1,
-              "gameWins": 3,
-              "gameLosses": 1,
-              "gameDiff": 2,
               "rank": 2,
               "qualification": "seat-AB"
             },
             {
               "teamId": "we",
-              "played": 1,
+              "played": 2,
               "wins": 1,
-              "losses": 0,
+              "losses": 1,
               "points": 1,
-              "gameWins": 3,
-              "gameLosses": 2,
-              "gameDiff": 1,
+              "gameWins": 4,
+              "gameLosses": 4,
+              "gameDiff": 0,
               "rank": 3,
               "qualification": "elim"
             },
@@ -1562,13 +1562,16 @@
       "id": "stage2-014",
       "stage": "stage2",
       "group": "B",
-      "date": "2026-07-15T17:36:00+08:00",
+      "date": "2026-07-15T17:35:00+08:00",
       "bo": 5,
-      "status": "scheduled",
+      "status": "completed",
       "home": "we",
       "away": "wst",
-      "score": null,
-      "winner": null
+      "score": {
+        "home": 1,
+        "away": 2
+      },
+      "winner": "wst"
     },
     {
       "id": "stage2-015",
@@ -1998,5 +2001,5 @@
     "https://liquipedia.net/honorofkings/King_Pro_League/2026/Summer",
     "https://pvp.qq.com/gicp/news/651/792782.html"
   ],
-  "updatedAt": "2026-07-15T12:00:00+08:00"
+  "updatedAt": "2026-07-15T18:00:00+08:00"
 }

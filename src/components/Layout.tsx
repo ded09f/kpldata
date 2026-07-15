@@ -9,6 +9,7 @@ const links = [
   { to: '/schedule', label: '赛程' },
   { to: '/h2h', label: '对战' },
   { to: '/predict', label: '胜率预测' },
+  { to: '/outlook', label: '晋级前景' },
   { to: '/teams', label: '战队' },
   { to: '/rules', label: '赛制规则' },
   { to: '/archive', label: '历史档案' },

@@ -1,0 +1,31 @@
+{
+  "source": "https://pvp.qq.com/gicp/news/651/792782.html",
+  "title": "王者荣耀职业联赛（KPL）2026 赛事规则",
+  "version": "2026年3月版本",
+  "stage2": {
+    "rule": "4.1.2",
+    "note": "积分清零后 S/A/B 组内 BO5 单循环；排出 S1-S6、A1-A6、B1-B6；B3-B6 无缘后续。"
+  },
+  "seat": {
+    "rule": "4.1.3",
+    "sa": ["S5 vs A2", "S6 vs A1"],
+    "saResult": "胜者进第三轮S，败者进第三轮A",
+    "ab": ["A5 vs B2", "A6 vs B1"],
+    "abResult": "胜者进第三轮A，败者淘汰；若A队落败则成绩排名上第二轮A5记为B1、A6记为B2",
+    "format": "BO7含巅峰对决"
+  },
+  "stage3": {
+    "rule": "4.1.4",
+    "note": "积分再次清零；S、A 组内 BO5 单循环决定季后赛名额。"
+  },
+  "playoffs": {
+    "rule": "4.2",
+    "teams": "第三轮S组全部6支（前4名胜者组）+ A组前4",
+    "format": "BO7双败淘汰",
+    "bracketNote": "具体对阵由组委会按第三轮排名通知；本站轮次映射参考公开赛历：胜者组=S1-S4；败者组第一轮=A1-A4；败者组第二轮=S5/S6入场。"
+  },
+  "monteCarlo": {
+    "seed": 42,
+    "iterations": 10000
+  }
+}

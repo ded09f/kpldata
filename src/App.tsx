@@ -10,6 +10,7 @@ import { RulesPage } from '@/pages/RulesPage'
 import { ArchivePage } from '@/pages/ArchivePage'
 import { ArchiveDetailPage } from '@/pages/ArchiveDetailPage'
 import { AboutPage } from '@/pages/AboutPage'
+import { OutlookPage } from '@/pages/OutlookPage'
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="rules" element={<RulesPage />} />
           <Route path="archive" element={<ArchivePage />} />
           <Route path="archive/:seasonId" element={<ArchiveDetailPage />} />
+          <Route path="outlook" element={<OutlookPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>

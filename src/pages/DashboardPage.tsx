@@ -36,6 +36,9 @@ export function DashboardPage() {
             <Link className="btn btn-primary" to="/predict">
               胜率预测
             </Link>
+            <Link className="btn" to="/outlook">
+              晋级前景
+            </Link>
             <Link className="btn" to="/rules">
               查看赛制
             </Link>
