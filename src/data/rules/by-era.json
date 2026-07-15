@@ -1,0 +1,37 @@
+[
+  {
+    "id": "ab-early",
+    "years": "2016-2017",
+    "formatKind": "ab-groups",
+    "title": "双组循环时代",
+    "body": "联赛创立初期采用 A/B 两组组内循环，各组前列晋级双败季后赛。"
+  },
+  {
+    "id": "east-west",
+    "years": "2018-2020春",
+    "formatKind": "east-west",
+    "title": "东西部赛区时代",
+    "body": "战队划分为东部与西部赛区，组内与跨区对阵并存，分区积分榜分别排名，并设保级赛。"
+  },
+  {
+    "id": "single",
+    "years": "2020秋",
+    "formatKind": "single-table",
+    "title": "大组积分时代",
+    "body": "取消东西部分组，16 队同组单循环，前十晋级季后赛。"
+  },
+  {
+    "id": "sab",
+    "years": "2021至今",
+    "formatKind": "sab",
+    "title": "SAB 升降组时代",
+    "body": "常规赛分三轮，按成绩进入 S/A/B 组并设卡位赛，竞争更加残酷；临时席位制度并行。"
+  },
+  {
+    "id": "masters",
+    "years": "2024至今",
+    "formatKind": "masters-elites",
+    "title": "年度总决赛",
+    "body": "全年积分前 12 进入年总，分大师组与精英组进行组外循环，再经突围赛与双败淘汰决出圣龙杯归属。"
+  }
+]

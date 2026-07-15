@@ -1,0 +1,2002 @@
+{
+  "id": "2026-summer",
+  "name": "2026 KPL夏季赛",
+  "year": 2026,
+  "slug": "summer",
+  "type": "league",
+  "status": "ongoing",
+  "currentStage": "stage2",
+  "startDate": "2026-06-17",
+  "endDate": "2026-09-12",
+  "prizePool": "¥12,000,000",
+  "formatKind": "sab",
+  "default": true,
+  "teams": [
+    {
+      "id": "ag",
+      "name": "成都AG超玩会",
+      "shortName": "AG",
+      "city": "成都",
+      "seatType": "fixed",
+      "color": "#E11D48"
+    },
+    {
+      "id": "drg",
+      "name": "佛山DRG",
+      "shortName": "DRG",
+      "city": "佛山",
+      "seatType": "fixed",
+      "color": "#0EA5E9"
+    },
+    {
+      "id": "dyg",
+      "name": "深圳DYG",
+      "shortName": "DYG",
+      "city": "深圳",
+      "seatType": "fixed",
+      "color": "#F97316"
+    },
+    {
+      "id": "edg",
+      "name": "上海EDG.M",
+      "shortName": "EDG",
+      "city": "上海",
+      "seatType": "fixed",
+      "color": "#111827"
+    },
+    {
+      "id": "esp",
+      "name": "武汉eStarPro",
+      "shortName": "eStar",
+      "city": "武汉",
+      "seatType": "fixed",
+      "color": "#2563EB"
+    },
+    {
+      "id": "hero",
+      "name": "南通Hero久竞",
+      "shortName": "Hero",
+      "city": "南通",
+      "seatType": "fixed",
+      "color": "#DC2626"
+    },
+    {
+      "id": "jdg",
+      "name": "北京JDG",
+      "shortName": "JDG",
+      "city": "北京",
+      "seatType": "fixed",
+      "color": "#EF4444"
+    },
+    {
+      "id": "ksg",
+      "name": "KSG",
+      "shortName": "KSG",
+      "city": "苏州",
+      "seatType": "fixed",
+      "color": "#F59E0B"
+    },
+    {
+      "id": "wolves",
+      "name": "重庆狼队",
+      "shortName": "狼队",
+      "city": "重庆",
+      "seatType": "fixed",
+      "color": "#7C3AED"
+    },
+    {
+      "id": "lgd",
+      "name": "杭州LGD.NBW",
+      "shortName": "LGD",
+      "city": "杭州",
+      "seatType": "fixed",
+      "color": "#16A34A"
+    },
+    {
+      "id": "rng",
+      "name": "上海RNG.M",
+      "shortName": "RNG",
+      "city": "上海",
+      "seatType": "fixed",
+      "color": "#B91C1C"
+    },
+    {
+      "id": "rw",
+      "name": "济南RW侠",
+      "shortName": "RW",
+      "city": "济南",
+      "seatType": "fixed",
+      "color": "#0891B2"
+    },
+    {
+      "id": "tes",
+      "name": "长沙TES.A",
+      "shortName": "TES",
+      "city": "长沙",
+      "seatType": "fixed",
+      "color": "#4F46E5"
+    },
+    {
+      "id": "ttg",
+      "name": "广州TTG",
+      "shortName": "TTG",
+      "city": "广州",
+      "seatType": "fixed",
+      "color": "#CA8A04"
+    },
+    {
+      "id": "wb",
+      "name": "北京WB",
+      "shortName": "WB",
+      "city": "北京",
+      "seatType": "fixed",
+      "color": "#EAB308"
+    },
+    {
+      "id": "we",
+      "name": "西安WE",
+      "shortName": "WE",
+      "city": "西安",
+      "seatType": "fixed",
+      "color": "#DB2777"
+    },
+    {
+      "id": "wst",
+      "name": "WST",
+      "shortName": "WST",
+      "city": "—",
+      "seatType": "temporary",
+      "color": "#64748B"
+    },
+    {
+      "id": "syg",
+      "name": "SYG",
+      "shortName": "SYG",
+      "city": "—",
+      "seatType": "temporary",
+      "color": "#14B8A6"
+    }
+  ],
+  "groups": {
+    "stage1": {
+      "G1": [
+        "jdg",
+        "ttg",
+        "tes",
+        "syg",
+        "we",
+        "drg"
+      ],
+      "G2": [
+        "wb",
+        "lgd",
+        "edg",
+        "hero",
+        "esp",
+        "rng"
+      ],
+      "G3": [
+        "ksg",
+        "ag",
+        "wolves",
+        "rw",
+        "dyg",
+        "wst"
+      ]
+    },
+    "stage2": {
+      "S": [
+        "jdg",
+        "ttg",
+        "wb",
+        "lgd",
+        "ksg",
+        "ag"
+      ],
+      "A": [
+        "tes",
+        "syg",
+        "edg",
+        "hero",
+        "wolves",
+        "rw"
+      ],
+      "B": [
+        "we",
+        "drg",
+        "esp",
+        "rng",
+        "dyg",
+        "wst"
+      ]
+    }
+  },
+  "standings": [
+    {
+      "stage": "stage1",
+      "label": "第一轮循环赛",
+      "tables": [
+        {
+          "group": "G1",
+          "rows": [
+            {
+              "teamId": "jdg",
+              "played": 5,
+              "wins": 5,
+              "losses": 0,
+              "points": 5,
+              "gameWins": 15,
+              "gameLosses": 6,
+              "gameDiff": 9,
+              "rank": 1,
+              "qualification": "S"
+            },
+            {
+              "teamId": "ttg",
+              "played": 5,
+              "wins": 3,
+              "losses": 2,
+              "points": 3,
+              "gameWins": 13,
+              "gameLosses": 7,
+              "gameDiff": 6,
+              "rank": 2,
+              "qualification": "S"
+            },
+            {
+              "teamId": "tes",
+              "played": 5,
+              "wins": 3,
+              "losses": 2,
+              "points": 3,
+              "gameWins": 13,
+              "gameLosses": 9,
+              "gameDiff": 4,
+              "rank": 3,
+              "qualification": "A"
+            },
+            {
+              "teamId": "syg",
+              "played": 5,
+              "wins": 2,
+              "losses": 3,
+              "points": 2,
+              "gameWins": 8,
+              "gameLosses": 13,
+              "gameDiff": -5,
+              "rank": 4,
+              "qualification": "A"
+            },
+            {
+              "teamId": "we",
+              "played": 5,
+              "wins": 1,
+              "losses": 4,
+              "points": 1,
+              "gameWins": 7,
+              "gameLosses": 13,
+              "gameDiff": -6,
+              "rank": 5,
+              "qualification": "B"
+            },
+            {
+              "teamId": "drg",
+              "played": 5,
+              "wins": 1,
+              "losses": 4,
+              "points": 1,
+              "gameWins": 5,
+              "gameLosses": 13,
+              "gameDiff": -8,
+              "rank": 6,
+              "qualification": "B"
+            }
+          ]
+        },
+        {
+          "group": "G2",
+          "rows": [
+            {
+              "teamId": "wb",
+              "played": 5,
+              "wins": 5,
+              "losses": 0,
+              "points": 5,
+              "gameWins": 15,
+              "gameLosses": 1,
+              "gameDiff": 14,
+              "rank": 1,
+              "qualification": "S"
+            },
+            {
+              "teamId": "lgd",
+              "played": 5,
+              "wins": 4,
+              "losses": 1,
+              "points": 4,
+              "gameWins": 12,
+              "gameLosses": 7,
+              "gameDiff": 5,
+              "rank": 2,
+              "qualification": "S"
+            },
+            {
+              "teamId": "edg",
+              "played": 5,
+              "wins": 3,
+              "losses": 2,
+              "points": 3,
+              "gameWins": 9,
+              "gameLosses": 10,
+              "gameDiff": -1,
+              "rank": 3,
+              "qualification": "A"
+            },
+            {
+              "teamId": "hero",
+              "played": 5,
+              "wins": 2,
+              "losses": 3,
+              "points": 2,
+              "gameWins": 11,
+              "gameLosses": 11,
+              "gameDiff": 0,
+              "rank": 4,
+              "qualification": "A"
+            },
+            {
+              "teamId": "esp",
+              "played": 5,
+              "wins": 1,
+              "losses": 4,
+              "points": 1,
+              "gameWins": 5,
+              "gameLosses": 13,
+              "gameDiff": -8,
+              "rank": 5,
+              "qualification": "B"
+            },
+            {
+              "teamId": "rng",
+              "played": 5,
+              "wins": 0,
+              "losses": 5,
+              "points": 0,
+              "gameWins": 5,
+              "gameLosses": 15,
+              "gameDiff": -10,
+              "rank": 6,
+              "qualification": "B"
+            }
+          ]
+        },
+        {
+          "group": "G3",
+          "rows": [
+            {
+              "teamId": "ksg",
+              "played": 5,
+              "wins": 4,
+              "losses": 1,
+              "points": 4,
+              "gameWins": 13,
+              "gameLosses": 4,
+              "gameDiff": 9,
+              "rank": 1,
+              "qualification": "S"
+            },
+            {
+              "teamId": "ag",
+              "played": 5,
+              "wins": 4,
+              "losses": 1,
+              "points": 4,
+              "gameWins": 12,
+              "gameLosses": 7,
+              "gameDiff": 5,
+              "rank": 2,
+              "qualification": "S"
+            },
+            {
+              "teamId": "wolves",
+              "played": 5,
+              "wins": 3,
+              "losses": 2,
+              "points": 3,
+              "gameWins": 11,
+              "gameLosses": 9,
+              "gameDiff": 2,
+              "rank": 3,
+              "qualification": "A"
+            },
+            {
+              "teamId": "rw",
+              "played": 5,
+              "wins": 2,
+              "losses": 3,
+              "points": 2,
+              "gameWins": 10,
+              "gameLosses": 9,
+              "gameDiff": 1,
+              "rank": 4,
+              "qualification": "A"
+            },
+            {
+              "teamId": "dyg",
+              "played": 5,
+              "wins": 1,
+              "losses": 4,
+              "points": 1,
+              "gameWins": 5,
+              "gameLosses": 12,
+              "gameDiff": -7,
+              "rank": 5,
+              "qualification": "B"
+            },
+            {
+              "teamId": "wst",
+              "played": 5,
+              "wins": 1,
+              "losses": 4,
+              "points": 1,
+              "gameWins": 4,
+              "gameLosses": 14,
+              "gameDiff": -10,
+              "rank": 6,
+              "qualification": "B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "stage2",
+      "label": "第二轮循环赛",
+      "tables": [
+        {
+          "group": "S",
+          "rows": [
+            {
+              "teamId": "wb",
+              "played": 2,
+              "wins": 2,
+              "losses": 0,
+              "points": 2,
+              "gameWins": 6,
+              "gameLosses": 2,
+              "gameDiff": 4,
+              "rank": 1,
+              "qualification": "S3"
+            },
+            {
+              "teamId": "ttg",
+              "played": 1,
+              "wins": 1,
+              "losses": 0,
+              "points": 1,
+              "gameWins": 3,
+              "gameLosses": 0,
+              "gameDiff": 3,
+              "rank": 2,
+              "qualification": "S3"
+            },
+            {
+              "teamId": "jdg",
+              "played": 2,
+              "wins": 1,
+              "losses": 1,
+              "points": 1,
+              "gameWins": 4,
+              "gameLosses": 3,
+              "gameDiff": 1,
+              "rank": 3,
+              "qualification": "S3"
+            },
+            {
+              "teamId": "ag",
+              "played": 2,
+              "wins": 1,
+              "losses": 1,
+              "points": 1,
+              "gameWins": 3,
+              "gameLosses": 4,
+              "gameDiff": -1,
+              "rank": 4,
+              "qualification": "S3"
+            },
+            {
+              "teamId": "lgd",
+              "played": 1,
+              "wins": 0,
+              "losses": 1,
+              "points": 0,
+              "gameWins": 0,
+              "gameLosses": 3,
+              "gameDiff": -3,
+              "rank": 5,
+              "qualification": "seat-SA"
+            },
+            {
+              "teamId": "ksg",
+              "played": 2,
+              "wins": 0,
+              "losses": 2,
+              "points": 0,
+              "gameWins": 2,
+              "gameLosses": 6,
+              "gameDiff": -4,
+              "rank": 6,
+              "qualification": "seat-SA"
+            }
+          ]
+        },
+        {
+          "group": "A",
+          "rows": [
+            {
+              "teamId": "wolves",
+              "played": 2,
+              "wins": 2,
+              "losses": 0,
+              "points": 2,
+              "gameWins": 6,
+              "gameLosses": 2,
+              "gameDiff": 4,
+              "rank": 1,
+              "qualification": "seat-SA"
+            },
+            {
+              "teamId": "syg",
+              "played": 2,
+              "wins": 2,
+              "losses": 0,
+              "points": 2,
+              "gameWins": 6,
+              "gameLosses": 3,
+              "gameDiff": 3,
+              "rank": 2,
+              "qualification": "seat-SA"
+            },
+            {
+              "teamId": "tes",
+              "played": 2,
+              "wins": 1,
+              "losses": 1,
+              "points": 1,
+              "gameWins": 4,
+              "gameLosses": 5,
+              "gameDiff": -1,
+              "rank": 3,
+              "qualification": "A3"
+            },
+            {
+              "teamId": "hero",
+              "played": 1,
+              "wins": 0,
+              "losses": 1,
+              "points": 0,
+              "gameWins": 2,
+              "gameLosses": 3,
+              "gameDiff": -1,
+              "rank": 4,
+              "qualification": "A3"
+            },
+            {
+              "teamId": "rw",
+              "played": 2,
+              "wins": 0,
+              "losses": 2,
+              "points": 0,
+              "gameWins": 4,
+              "gameLosses": 6,
+              "gameDiff": -2,
+              "rank": 5,
+              "qualification": "seat-AB"
+            },
+            {
+              "teamId": "edg",
+              "played": 1,
+              "wins": 0,
+              "losses": 1,
+              "points": 0,
+              "gameWins": 0,
+              "gameLosses": 3,
+              "gameDiff": -3,
+              "rank": 6,
+              "qualification": "seat-AB"
+            }
+          ]
+        },
+        {
+          "group": "B",
+          "rows": [
+            {
+              "teamId": "drg",
+              "played": 1,
+              "wins": 1,
+              "losses": 0,
+              "points": 1,
+              "gameWins": 3,
+              "gameLosses": 0,
+              "gameDiff": 3,
+              "rank": 1,
+              "qualification": "seat-AB"
+            },
+            {
+              "teamId": "wst",
+              "played": 1,
+              "wins": 1,
+              "losses": 0,
+              "points": 1,
+              "gameWins": 3,
+              "gameLosses": 1,
+              "gameDiff": 2,
+              "rank": 2,
+              "qualification": "seat-AB"
+            },
+            {
+              "teamId": "we",
+              "played": 1,
+              "wins": 1,
+              "losses": 0,
+              "points": 1,
+              "gameWins": 3,
+              "gameLosses": 2,
+              "gameDiff": 1,
+              "rank": 3,
+              "qualification": "elim"
+            },
+            {
+              "teamId": "rng",
+              "played": 1,
+              "wins": 0,
+              "losses": 1,
+              "points": 0,
+              "gameWins": 2,
+              "gameLosses": 3,
+              "gameDiff": -1,
+              "rank": 4,
+              "qualification": "elim"
+            },
+            {
+              "teamId": "dyg",
+              "played": 1,
+              "wins": 0,
+              "losses": 1,
+              "points": 0,
+              "gameWins": 1,
+              "gameLosses": 3,
+              "gameDiff": -2,
+              "rank": 5,
+              "qualification": "elim"
+            },
+            {
+              "teamId": "esp",
+              "played": 1,
+              "wins": 0,
+              "losses": 1,
+              "points": 0,
+              "gameWins": 0,
+              "gameLosses": 3,
+              "gameDiff": -3,
+              "rank": 6,
+              "qualification": "elim"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "matches": [
+    {
+      "id": "stage1-001",
+      "stage": "stage1",
+      "group": "G1",
+      "date": "2026-06-17T14:11:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "drg",
+      "away": "ttg",
+      "score": {
+        "home": 1,
+        "away": 3
+      },
+      "winner": "ttg"
+    },
+    {
+      "id": "stage1-002",
+      "stage": "stage1",
+      "group": "G2",
+      "date": "2026-06-17T17:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "wb",
+      "away": "esp",
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "winner": "wb"
+    },
+    {
+      "id": "stage1-003",
+      "stage": "stage1",
+      "group": "G3",
+      "date": "2026-06-17T20:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "wolves",
+      "away": "ksg",
+      "score": {
+        "home": 0,
+        "away": 3
+      },
+      "winner": "ksg"
+    },
+    {
+      "id": "stage1-004",
+      "stage": "stage1",
+      "group": "G3",
+      "date": "2026-06-18T14:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "wst",
+      "away": "rw",
+      "score": {
+        "home": 3,
+        "away": 2
+      },
+      "winner": "wst"
+    },
+    {
+      "id": "stage1-005",
+      "stage": "stage1",
+      "group": "G1",
+      "date": "2026-06-18T17:39:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "we",
+      "away": "tes",
+      "score": {
+        "home": 1,
+        "away": 3
+      },
+      "winner": "tes"
+    },
+    {
+      "id": "stage1-006",
+      "stage": "stage1",
+      "group": "G2",
+      "date": "2026-06-18T20:20:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "lgd",
+      "away": "rng",
+      "score": {
+        "home": 3,
+        "away": 2
+      },
+      "winner": "lgd"
+    },
+    {
+      "id": "stage1-007",
+      "stage": "stage1",
+      "group": "G2",
+      "date": "2026-06-19T14:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "wb",
+      "away": "edg",
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "winner": "wb"
+    },
+    {
+      "id": "stage1-008",
+      "stage": "stage1",
+      "group": "G1",
+      "date": "2026-06-19T17:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "jdg",
+      "away": "syg",
+      "score": {
+        "home": 3,
+        "away": 1
+      },
+      "winner": "jdg"
+    },
+    {
+      "id": "stage1-009",
+      "stage": "stage1",
+      "group": "G3",
+      "date": "2026-06-19T20:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "ag",
+      "away": "ksg",
+      "score": {
+        "home": 3,
+        "away": 1
+      },
+      "winner": "ag"
+    },
+    {
+      "id": "stage1-010",
+      "stage": "stage1",
+      "group": "G2",
+      "date": "2026-06-20T14:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "lgd",
+      "away": "hero",
+      "score": {
+        "home": 3,
+        "away": 2
+      },
+      "winner": "lgd"
+    },
+    {
+      "id": "stage1-011",
+      "stage": "stage1",
+      "group": "G1",
+      "date": "2026-06-20T17:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "we",
+      "away": "ttg",
+      "score": {
+        "home": 0,
+        "away": 3
+      },
+      "winner": "ttg"
+    },
+    {
+      "id": "stage1-012",
+      "stage": "stage1",
+      "group": "G3",
+      "date": "2026-06-20T20:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "wolves",
+      "away": "dyg",
+      "score": {
+        "home": 3,
+        "away": 1
+      },
+      "winner": "wolves"
+    },
+    {
+      "id": "stage1-013",
+      "stage": "stage1",
+      "group": "G2",
+      "date": "2026-06-21T14:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "rng",
+      "away": "esp",
+      "score": {
+        "home": 1,
+        "away": 3
+      },
+      "winner": "esp"
+    },
+    {
+      "id": "stage1-014",
+      "stage": "stage1",
+      "group": "G1",
+      "date": "2026-06-21T17:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "jdg",
+      "away": "tes",
+      "score": {
+        "home": 3,
+        "away": 2
+      },
+      "winner": "jdg"
+    },
+    {
+      "id": "stage1-015",
+      "stage": "stage1",
+      "group": "G3",
+      "date": "2026-06-21T20:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "ag",
+      "away": "wst",
+      "score": {
+        "home": 3,
+        "away": 1
+      },
+      "winner": "ag"
+    },
+    {
+      "id": "stage1-016",
+      "stage": "stage1",
+      "group": "G1",
+      "date": "2026-06-24T14:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "tes",
+      "away": "syg",
+      "score": {
+        "home": 2,
+        "away": 3
+      },
+      "winner": "syg"
+    },
+    {
+      "id": "stage1-017",
+      "stage": "stage1",
+      "group": "G1",
+      "date": "2026-06-24T17:40:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "we",
+      "away": "drg",
+      "score": {
+        "home": 3,
+        "away": 1
+      },
+      "winner": "we"
+    },
+    {
+      "id": "stage1-018",
+      "stage": "stage1",
+      "group": "G3",
+      "date": "2026-06-24T20:35:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "rw",
+      "away": "ksg",
+      "score": {
+        "home": 0,
+        "away": 3
+      },
+      "winner": "ksg"
+    },
+    {
+      "id": "stage1-019",
+      "stage": "stage1",
+      "group": "G2",
+      "date": "2026-06-25T14:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "wb",
+      "away": "rng",
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "winner": "wb"
+    },
+    {
+      "id": "stage1-020",
+      "stage": "stage1",
+      "group": "G3",
+      "date": "2026-06-25T17:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "wst",
+      "away": "dyg",
+      "score": {
+        "home": 0,
+        "away": 3
+      },
+      "winner": "dyg"
+    },
+    {
+      "id": "stage1-021",
+      "stage": "stage1",
+      "group": "G2",
+      "date": "2026-06-25T20:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "lgd",
+      "away": "esp",
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "winner": "lgd"
+    },
+    {
+      "id": "stage1-022",
+      "stage": "stage1",
+      "group": "G1",
+      "date": "2026-06-26T14:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "drg",
+      "away": "tes",
+      "score": {
+        "home": 0,
+        "away": 3
+      },
+      "winner": "tes"
+    },
+    {
+      "id": "stage1-023",
+      "stage": "stage1",
+      "group": "G2",
+      "date": "2026-06-26T17:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "hero",
+      "away": "edg",
+      "score": {
+        "home": 2,
+        "away": 3
+      },
+      "winner": "edg"
+    },
+    {
+      "id": "stage1-024",
+      "stage": "stage1",
+      "group": "G1",
+      "date": "2026-06-26T20:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "jdg",
+      "away": "ttg",
+      "score": {
+        "home": 3,
+        "away": 2
+      },
+      "winner": "jdg"
+    },
+    {
+      "id": "stage1-025",
+      "stage": "stage1",
+      "group": "G1",
+      "date": "2026-06-27T14:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "we",
+      "away": "syg",
+      "score": {
+        "home": 2,
+        "away": 3
+      },
+      "winner": "syg"
+    },
+    {
+      "id": "stage1-026",
+      "stage": "stage1",
+      "group": "G3",
+      "date": "2026-06-27T17:25:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "ksg",
+      "away": "dyg",
+      "score": {
+        "home": 3,
+        "away": 1
+      },
+      "winner": "ksg"
+    },
+    {
+      "id": "stage1-027",
+      "stage": "stage1",
+      "group": "G3",
+      "date": "2026-06-27T20:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "ag",
+      "away": "rw",
+      "score": {
+        "home": 0,
+        "away": 3
+      },
+      "winner": "rw"
+    },
+    {
+      "id": "stage1-028",
+      "stage": "stage1",
+      "group": "G2",
+      "date": "2026-06-28T14:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "lgd",
+      "away": "edg",
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "winner": "lgd"
+    },
+    {
+      "id": "stage1-029",
+      "stage": "stage1",
+      "group": "G2",
+      "date": "2026-06-28T17:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "hero",
+      "away": "wb",
+      "score": {
+        "home": 1,
+        "away": 3
+      },
+      "winner": "wb"
+    },
+    {
+      "id": "stage1-030",
+      "stage": "stage1",
+      "group": "G3",
+      "date": "2026-06-28T20:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "wolves",
+      "away": "wst",
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "winner": "wolves"
+    },
+    {
+      "id": "stage1-031",
+      "stage": "stage1",
+      "group": "G2",
+      "date": "2026-07-01T14:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "rng",
+      "away": "edg",
+      "score": {
+        "home": 2,
+        "away": 3
+      },
+      "winner": "edg"
+    },
+    {
+      "id": "stage1-032",
+      "stage": "stage1",
+      "group": "G1",
+      "date": "2026-07-01T17:32:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "drg",
+      "away": "syg",
+      "score": {
+        "home": 3,
+        "away": 1
+      },
+      "winner": "drg"
+    },
+    {
+      "id": "stage1-033",
+      "stage": "stage1",
+      "group": "G2",
+      "date": "2026-07-01T20:06:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "wb",
+      "away": "lgd",
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "winner": "wb"
+    },
+    {
+      "id": "stage1-034",
+      "stage": "stage1",
+      "group": "G1",
+      "date": "2026-07-02T14:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "ttg",
+      "away": "tes",
+      "score": {
+        "home": 2,
+        "away": 3
+      },
+      "winner": "tes"
+    },
+    {
+      "id": "stage1-035",
+      "stage": "stage1",
+      "group": "G3",
+      "date": "2026-07-02T17:42:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "dyg",
+      "away": "rw",
+      "score": {
+        "home": 0,
+        "away": 3
+      },
+      "winner": "rw"
+    },
+    {
+      "id": "stage1-036",
+      "stage": "stage1",
+      "group": "G1",
+      "date": "2026-07-02T20:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "jdg",
+      "away": "we",
+      "score": {
+        "home": 3,
+        "away": 1
+      },
+      "winner": "jdg"
+    },
+    {
+      "id": "stage1-037",
+      "stage": "stage1",
+      "group": "G2",
+      "date": "2026-07-03T14:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "hero",
+      "away": "rng",
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "winner": "hero"
+    },
+    {
+      "id": "stage1-038",
+      "stage": "stage1",
+      "group": "G2",
+      "date": "2026-07-03T17:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "edg",
+      "away": "esp",
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "winner": "edg"
+    },
+    {
+      "id": "stage1-039",
+      "stage": "stage1",
+      "group": "G3",
+      "date": "2026-07-03T20:05:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "ag",
+      "away": "wolves",
+      "score": {
+        "home": 3,
+        "away": 2
+      },
+      "winner": "ag"
+    },
+    {
+      "id": "stage1-040",
+      "stage": "stage1",
+      "group": "G1",
+      "date": "2026-07-04T14:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "ttg",
+      "away": "syg",
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "winner": "ttg"
+    },
+    {
+      "id": "stage1-041",
+      "stage": "stage1",
+      "group": "G3",
+      "date": "2026-07-04T17:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "ksg",
+      "away": "wst",
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "winner": "ksg"
+    },
+    {
+      "id": "stage1-042",
+      "stage": "stage1",
+      "group": "G1",
+      "date": "2026-07-04T20:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "jdg",
+      "away": "drg",
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "winner": "jdg"
+    },
+    {
+      "id": "stage1-043",
+      "stage": "stage1",
+      "group": "G2",
+      "date": "2026-07-05T14:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "hero",
+      "away": "esp",
+      "score": {
+        "home": 3,
+        "away": 2
+      },
+      "winner": "hero"
+    },
+    {
+      "id": "stage1-044",
+      "stage": "stage1",
+      "group": "G3",
+      "date": "2026-07-05T17:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "wolves",
+      "away": "rw",
+      "score": {
+        "home": 3,
+        "away": 2
+      },
+      "winner": "wolves"
+    },
+    {
+      "id": "stage1-045",
+      "stage": "stage1",
+      "group": "G3",
+      "date": "2026-07-05T20:27:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "ag",
+      "away": "dyg",
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "winner": "ag"
+    },
+    {
+      "id": "stage2-001",
+      "stage": "stage2",
+      "group": "A",
+      "date": "2026-07-09T14:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "hero",
+      "away": "syg",
+      "score": {
+        "home": 2,
+        "away": 3
+      },
+      "winner": "syg"
+    },
+    {
+      "id": "stage2-002",
+      "stage": "stage2",
+      "group": "A",
+      "date": "2026-07-09T17:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "rw",
+      "away": "tes",
+      "score": {
+        "home": 2,
+        "away": 3
+      },
+      "winner": "tes"
+    },
+    {
+      "id": "stage2-003",
+      "stage": "stage2",
+      "group": "B",
+      "date": "2026-07-09T20:46:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "drg",
+      "away": "esp",
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "winner": "drg"
+    },
+    {
+      "id": "stage2-004",
+      "stage": "stage2",
+      "group": "A",
+      "date": "2026-07-10T14:13:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "wolves",
+      "away": "edg",
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "winner": "wolves"
+    },
+    {
+      "id": "stage2-005",
+      "stage": "stage2",
+      "group": "S",
+      "date": "2026-07-10T17:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "wb",
+      "away": "ksg",
+      "score": {
+        "home": 3,
+        "away": 2
+      },
+      "winner": "wb"
+    },
+    {
+      "id": "stage2-006",
+      "stage": "stage2",
+      "group": "S",
+      "date": "2026-07-10T20:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "jdg",
+      "away": "ag",
+      "score": {
+        "home": 1,
+        "away": 3
+      },
+      "winner": "ag"
+    },
+    {
+      "id": "stage2-007",
+      "stage": "stage2",
+      "group": "S",
+      "date": "2026-07-12T14:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "jdg",
+      "away": "ksg",
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "winner": "jdg"
+    },
+    {
+      "id": "stage2-008",
+      "stage": "stage2",
+      "group": "A",
+      "date": "2026-07-12T17:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "wolves",
+      "away": "rw",
+      "score": {
+        "home": 3,
+        "away": 2
+      },
+      "winner": "wolves"
+    },
+    {
+      "id": "stage2-009",
+      "stage": "stage2",
+      "group": "S",
+      "date": "2026-07-12T20:12:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "wb",
+      "away": "ag",
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "winner": "wb"
+    },
+    {
+      "id": "stage2-010",
+      "stage": "stage2",
+      "group": "B",
+      "date": "2026-07-13T14:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "rng",
+      "away": "we",
+      "score": {
+        "home": 2,
+        "away": 3
+      },
+      "winner": "we"
+    },
+    {
+      "id": "stage2-011",
+      "stage": "stage2",
+      "group": "B",
+      "date": "2026-07-13T17:32:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "dyg",
+      "away": "wst",
+      "score": {
+        "home": 1,
+        "away": 3
+      },
+      "winner": "wst"
+    },
+    {
+      "id": "stage2-012",
+      "stage": "stage2",
+      "group": "S",
+      "date": "2026-07-13T20:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "lgd",
+      "away": "ttg",
+      "score": {
+        "home": 0,
+        "away": 3
+      },
+      "winner": "ttg"
+    },
+    {
+      "id": "stage2-013",
+      "stage": "stage2",
+      "group": "A",
+      "date": "2026-07-15T14:00:00+08:00",
+      "bo": 5,
+      "status": "completed",
+      "home": "syg",
+      "away": "tes",
+      "score": {
+        "home": 3,
+        "away": 1
+      },
+      "winner": "syg"
+    },
+    {
+      "id": "stage2-014",
+      "stage": "stage2",
+      "group": "B",
+      "date": "2026-07-15T17:36:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "we",
+      "away": "wst",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-015",
+      "stage": "stage2",
+      "group": "A",
+      "date": "2026-07-15T20:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "hero",
+      "away": "edg",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-016",
+      "stage": "stage2",
+      "group": "B",
+      "date": "2026-07-16T14:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "drg",
+      "away": "rng",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-017",
+      "stage": "stage2",
+      "group": "B",
+      "date": "2026-07-16T17:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "esp",
+      "away": "dyg",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-018",
+      "stage": "stage2",
+      "group": "S",
+      "date": "2026-07-16T20:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "jdg",
+      "away": "ttg",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-019",
+      "stage": "stage2",
+      "group": "A",
+      "date": "2026-07-17T14:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "hero",
+      "away": "tes",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-020",
+      "stage": "stage2",
+      "group": "S",
+      "date": "2026-07-17T17:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "lgd",
+      "away": "wb",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-021",
+      "stage": "stage2",
+      "group": "S",
+      "date": "2026-07-17T20:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "ag",
+      "away": "ksg",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-022",
+      "stage": "stage2",
+      "group": "B",
+      "date": "2026-07-18T14:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "drg",
+      "away": "wst",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-023",
+      "stage": "stage2",
+      "group": "B",
+      "date": "2026-07-18T17:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "rng",
+      "away": "dyg",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-024",
+      "stage": "stage2",
+      "group": "A",
+      "date": "2026-07-18T20:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "wolves",
+      "away": "syg",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-025",
+      "stage": "stage2",
+      "group": "A",
+      "date": "2026-07-19T14:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "edg",
+      "away": "rw",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-026",
+      "stage": "stage2",
+      "group": "S",
+      "date": "2026-07-19T17:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "lgd",
+      "away": "jdg",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-027",
+      "stage": "stage2",
+      "group": "S",
+      "date": "2026-07-19T20:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "ag",
+      "away": "ttg",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-028",
+      "stage": "stage2",
+      "group": "A",
+      "date": "2026-07-21T14:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "tes",
+      "away": "edg",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-029",
+      "stage": "stage2",
+      "group": "B",
+      "date": "2026-07-21T17:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "drg",
+      "away": "we",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-030",
+      "stage": "stage2",
+      "group": "A",
+      "date": "2026-07-21T20:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "rw",
+      "away": "syg",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-031",
+      "stage": "stage2",
+      "group": "B",
+      "date": "2026-07-22T14:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "esp",
+      "away": "rng",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-032",
+      "stage": "stage2",
+      "group": "S",
+      "date": "2026-07-22T17:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "lgd",
+      "away": "ksg",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-033",
+      "stage": "stage2",
+      "group": "S",
+      "date": "2026-07-22T20:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "wb",
+      "away": "ttg",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-034",
+      "stage": "stage2",
+      "group": "A",
+      "date": "2026-07-23T14:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "syg",
+      "away": "edg",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-035",
+      "stage": "stage2",
+      "group": "B",
+      "date": "2026-07-23T17:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "dyg",
+      "away": "drg",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-036",
+      "stage": "stage2",
+      "group": "A",
+      "date": "2026-07-23T20:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "hero",
+      "away": "rw",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-037",
+      "stage": "stage2",
+      "group": "B",
+      "date": "2026-07-24T14:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "rng",
+      "away": "wst",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-038",
+      "stage": "stage2",
+      "group": "B",
+      "date": "2026-07-24T17:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "we",
+      "away": "esp",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-039",
+      "stage": "stage2",
+      "group": "A",
+      "date": "2026-07-24T20:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "wolves",
+      "away": "tes",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-040",
+      "stage": "stage2",
+      "group": "S",
+      "date": "2026-07-25T14:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "jdg",
+      "away": "wb",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-041",
+      "stage": "stage2",
+      "group": "S",
+      "date": "2026-07-25T17:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "ksg",
+      "away": "ttg",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-042",
+      "stage": "stage2",
+      "group": "S",
+      "date": "2026-07-25T20:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "ag",
+      "away": "lgd",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-043",
+      "stage": "stage2",
+      "group": "B",
+      "date": "2026-07-26T14:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "wst",
+      "away": "esp",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-044",
+      "stage": "stage2",
+      "group": "B",
+      "date": "2026-07-26T17:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "dyg",
+      "away": "we",
+      "score": null,
+      "winner": null
+    },
+    {
+      "id": "stage2-045",
+      "stage": "stage2",
+      "group": "A",
+      "date": "2026-07-26T20:00:00+08:00",
+      "bo": 5,
+      "status": "scheduled",
+      "home": "wolves",
+      "away": "hero",
+      "score": null,
+      "winner": null
+    }
+  ],
+  "rules": {
+    "summary": "2026 KPL夏季赛沿用 SAB 三轮循环 + 卡位赛赛制。18支战队经抽签进入三组进行第一轮；按积分进入第二轮 S/A/B 组；卡位赛后 B 组出局；第三轮决定季后赛席位。",
+    "stages": [
+      {
+        "id": "stage1",
+        "name": "第一轮循环赛",
+        "format": "三组（每组6队）BO5 组内单循环；胜积1分。各组1-2名进S组，3-4名进A组，5-6名进B组。积分成绩清零进入下一轮。",
+        "period": "2026-06-17 ~ 2026-07-05"
+      },
+      {
+        "id": "stage2",
+        "name": "第二轮循环赛",
+        "format": "S/A/B 组各自 BO5 组内单循环。结束后：S5-S6 与 A1-A2 打卡位赛；A5-A6 与 B1-B2 打卡位赛；B3-B6 淘汰。",
+        "period": "2026-07-09 ~ 2026-07-26"
+      },
+      {
+        "id": "seat",
+        "name": "卡位赛",
+        "format": "BO7。胜者升组/保组，负者降组/淘汰。卡位赛后 B 组全部出局。",
+        "period": "2026-07-27 ~ 2026-07-28"
+      },
+      {
+        "id": "stage3",
+        "name": "第三轮循环赛",
+        "format": "S/A 两组 BO5 组内单循环（积分清零）。S组全部 + A组前4 晋级季后赛；A5-A6 淘汰。",
+        "period": "2026-07-30 ~ 2026-08-23"
+      },
+      {
+        "id": "playoffs",
+        "name": "季后赛",
+        "format": "BO7 双败淘汰；全局BP + 第7局巅峰对决。S1-S4 进胜者组，S5-S6 进败者组R2，A1-A4 进败者组R1。",
+        "period": "2026-08-27 ~ 2026-09-06"
+      },
+      {
+        "id": "finals",
+        "name": "总决赛",
+        "format": "BO7，厦门凤凰体育馆。",
+        "period": "2026-09-12"
+      }
+    ],
+    "tiebreakers": [
+      "净胜局（小分差）",
+      "相互战绩",
+      "如仍相同则加赛"
+    ],
+    "formatKind": "sab"
+  },
+  "champion": null,
+  "top4": null,
+  "fmvp": null,
+  "sources": [
+    "https://zh.wikipedia.org/wiki/王者荣耀职业联赛2026年夏季赛",
+    "https://liquipedia.net/honorofkings/King_Pro_League/2026/Summer",
+    "https://pvp.qq.com/gicp/news/651/792782.html"
+  ],
+  "updatedAt": "2026-07-15T12:00:00+08:00"
+}
