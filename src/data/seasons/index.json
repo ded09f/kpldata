@@ -1,0 +1,818 @@
+{
+  "defaultSeasonId": "2026-summer",
+  "updatedAt": "2026-07-15T12:00:00+08:00",
+  "seasons": [
+    {
+      "id": "2016-kings-cup",
+      "year": 2016,
+      "slug": "kings-cup",
+      "name": "2016 王者冠军杯",
+      "type": "cup",
+      "status": "completed",
+      "formatKind": "knockout",
+      "startDate": "2016-07-01",
+      "endDate": "2016-08-01",
+      "champion": "AG超玩会",
+      "runnerUp": null,
+      "top4": [
+        "AG超玩会"
+      ],
+      "fmvp": null,
+      "summary": "KPL 联赛正式启动前的顶级杯赛（Kings Champion Cup），被视为职业化前夜的重要赛事。",
+      "rulesSummary": "邀请制淘汰赛，BO 系列决出冠军。"
+    },
+    {
+      "id": "2016-autumn",
+      "year": 2016,
+      "slug": "autumn",
+      "name": "2016 KPL秋季赛",
+      "type": "league",
+      "status": "completed",
+      "formatKind": "ab-groups",
+      "startDate": "2016-09-17",
+      "endDate": "2016-12-18",
+      "champion": "AS仙阁",
+      "runnerUp": "AG超玩会",
+      "top4": [
+        "AS仙阁",
+        "AG超玩会",
+        "XQ",
+        "eStar"
+      ],
+      "fmvp": "辰鬼",
+      "summary": "KPL 历史上首个正式赛季，12 支战队分 A/B 两组。",
+      "rulesSummary": "A/B 两组组内循环，各组前四进季后赛；季后赛 BO5 双败；总决赛 BO5。"
+    },
+    {
+      "id": "2017-spring",
+      "year": 2017,
+      "slug": "spring",
+      "name": "2017 KPL春季赛",
+      "type": "league",
+      "status": "completed",
+      "formatKind": "ab-groups",
+      "startDate": "2017-03-01",
+      "endDate": "2017-05-01",
+      "champion": "QGhappy",
+      "runnerUp": null,
+      "top4": [
+        "QGhappy"
+      ],
+      "fmvp": "Fly",
+      "summary": "联赛进入春秋双季时代，QGhappy 开启王朝。",
+      "rulesSummary": "双组循环 + 季后赛双败。"
+    },
+    {
+      "id": "2017-champion-cup",
+      "year": 2017,
+      "slug": "champion-cup",
+      "name": "2017 王者冠军杯",
+      "type": "cup",
+      "status": "completed",
+      "formatKind": "knockout",
+      "startDate": "2017-06-01",
+      "endDate": "2017-07-01",
+      "champion": "QGhappy",
+      "runnerUp": null,
+      "top4": [
+        "QGhappy"
+      ],
+      "fmvp": "Fly",
+      "summary": "春季赛与秋季赛之间的杯赛，QGhappy 连庄。",
+      "rulesSummary": "杯赛淘汰制。"
+    },
+    {
+      "id": "2017-autumn",
+      "year": 2017,
+      "slug": "autumn",
+      "name": "2017 KPL秋季赛",
+      "type": "league",
+      "status": "completed",
+      "formatKind": "ab-groups",
+      "startDate": "2017-09-01",
+      "endDate": "2018-01-01",
+      "champion": "QGhappy",
+      "runnerUp": null,
+      "top4": [
+        "QGhappy"
+      ],
+      "fmvp": "Fly",
+      "summary": "QGhappy 一年三冠，奠定王朝地位。",
+      "rulesSummary": "双组循环 + 季后赛双败。"
+    },
+    {
+      "id": "2018-spring",
+      "year": 2018,
+      "slug": "spring",
+      "name": "2018 KPL春季赛",
+      "type": "league",
+      "status": "completed",
+      "formatKind": "east-west",
+      "startDate": "2018-03-01",
+      "endDate": "2018-05-01",
+      "champion": "Hero久竞",
+      "runnerUp": null,
+      "top4": [
+        "Hero久竞"
+      ],
+      "fmvp": "久诚",
+      "summary": "首次引入东西部赛区与主客场概念。",
+      "rulesSummary": "东西部各 6 队；组内+组外 BO5；分区季后赛后会师总决赛；保级赛决定升降。"
+    },
+    {
+      "id": "2018-autumn",
+      "year": 2018,
+      "slug": "autumn",
+      "name": "2018 KPL秋季赛",
+      "type": "league",
+      "status": "completed",
+      "formatKind": "east-west",
+      "startDate": "2018-09-01",
+      "endDate": "2018-12-01",
+      "champion": "Hero久竞",
+      "runnerUp": null,
+      "top4": [
+        "Hero久竞"
+      ],
+      "fmvp": "久诚",
+      "summary": "Hero 久竞连庄，全局 BP / BO7 季后赛开始探索。",
+      "rulesSummary": "东西部赛制；季后赛后期引入全局 BP 与 BO7。"
+    },
+    {
+      "id": "2018-winter-cup",
+      "year": 2018,
+      "slug": "winter-cup",
+      "name": "2018 冬季冠军杯",
+      "type": "cup",
+      "status": "completed",
+      "formatKind": "knockout",
+      "startDate": "2018-12-01",
+      "endDate": "2019-01-01",
+      "champion": "Hero久竞",
+      "runnerUp": null,
+      "top4": [
+        "Hero久竞"
+      ],
+      "fmvp": "久诚",
+      "summary": "冬季冠军杯正式创立，Hero 完成三冠。",
+      "rulesSummary": "跨赛道杯赛淘汰制。"
+    },
+    {
+      "id": "2018-world-cup",
+      "year": 2018,
+      "slug": "world-cup",
+      "name": "2018 世界冠军杯",
+      "type": "world",
+      "status": "completed",
+      "formatKind": "knockout",
+      "startDate": "2018-07-01",
+      "endDate": "2018-08-01",
+      "champion": "AG超玩会",
+      "runnerUp": null,
+      "top4": [
+        "AG超玩会"
+      ],
+      "fmvp": null,
+      "summary": "王者荣耀世界冠军杯，汇聚全球赛区强队。",
+      "rulesSummary": "国际邀请淘汰赛。"
+    },
+    {
+      "id": "2019-spring",
+      "year": 2019,
+      "slug": "spring",
+      "name": "2019 KPL春季赛",
+      "type": "league",
+      "status": "completed",
+      "formatKind": "east-west",
+      "startDate": "2019-03-01",
+      "endDate": "2019-06-01",
+      "champion": "eStarPro",
+      "runnerUp": null,
+      "top4": [
+        "eStarPro"
+      ],
+      "fmvp": "Cat",
+      "summary": "东西部赛制延续，eStarPro 夺冠。",
+      "rulesSummary": "东西部常规赛 + 混合晋级季后赛（胜者组/败者组）。"
+    },
+    {
+      "id": "2019-autumn",
+      "year": 2019,
+      "slug": "autumn",
+      "name": "2019 KPL秋季赛",
+      "type": "league",
+      "status": "completed",
+      "formatKind": "east-west",
+      "startDate": "2019-09-01",
+      "endDate": "2019-12-01",
+      "champion": "AG超玩会",
+      "runnerUp": null,
+      "top4": [
+        "AG超玩会"
+      ],
+      "fmvp": "老帅",
+      "summary": "AG 超玩会时隔多年再捧杯。",
+      "rulesSummary": "东西部赛制；全局 BP 常规化。"
+    },
+    {
+      "id": "2019-winter-cup",
+      "year": 2019,
+      "slug": "winter-cup",
+      "name": "2019 冬季冠军杯",
+      "type": "cup",
+      "status": "completed",
+      "formatKind": "knockout",
+      "startDate": "2019-12-01",
+      "endDate": "2020-01-01",
+      "champion": "AG超玩会",
+      "runnerUp": null,
+      "top4": [
+        "AG超玩会"
+      ],
+      "fmvp": null,
+      "summary": "冬季冠军杯。",
+      "rulesSummary": "杯赛淘汰制。"
+    },
+    {
+      "id": "2019-world-cup",
+      "year": 2019,
+      "slug": "world-cup",
+      "name": "2019 世界冠军杯",
+      "type": "world",
+      "status": "completed",
+      "formatKind": "knockout",
+      "startDate": "2019-07-01",
+      "endDate": "2019-08-01",
+      "champion": "eStarPro",
+      "runnerUp": null,
+      "top4": [
+        "eStarPro"
+      ],
+      "fmvp": null,
+      "summary": "世界冠军杯。",
+      "rulesSummary": "国际邀请淘汰赛。"
+    },
+    {
+      "id": "2020-spring",
+      "year": 2020,
+      "slug": "spring",
+      "name": "2020 KPL春季赛",
+      "type": "league",
+      "status": "completed",
+      "formatKind": "east-west",
+      "startDate": "2020-03-01",
+      "endDate": "2020-06-01",
+      "champion": "TS",
+      "runnerUp": null,
+      "top4": [
+        "TS"
+      ],
+      "fmvp": "暖阳",
+      "summary": "主场城市与龙环体系亮相；TS 夺冠。",
+      "rulesSummary": "东西部赛制末期；主客场落地推进。"
+    },
+    {
+      "id": "2020-autumn",
+      "year": 2020,
+      "slug": "autumn",
+      "name": "2020 KPL秋季赛",
+      "type": "league",
+      "status": "completed",
+      "formatKind": "single-table",
+      "startDate": "2020-09-16",
+      "endDate": "2020-12-01",
+      "champion": "DYG",
+      "runnerUp": null,
+      "top4": [
+        "DYG"
+      ],
+      "fmvp": "小义",
+      "summary": "取消东西部，改为大组单循环；固定席位制开启。",
+      "rulesSummary": "16 队大组 BO5 单循环，前十进季后赛（前四胜者组，5-10 败者组）。"
+    },
+    {
+      "id": "2020-winter-cup",
+      "year": 2020,
+      "slug": "winter-cup",
+      "name": "2020 冬季冠军杯",
+      "type": "cup",
+      "status": "completed",
+      "formatKind": "knockout",
+      "startDate": "2020-12-01",
+      "endDate": "2021-01-01",
+      "champion": "重庆QGhappy",
+      "runnerUp": null,
+      "top4": [
+        "重庆QGhappy"
+      ],
+      "fmvp": null,
+      "summary": "冬季冠军杯。",
+      "rulesSummary": "杯赛淘汰制。"
+    },
+    {
+      "id": "2020-world-cup",
+      "year": 2020,
+      "slug": "world-cup",
+      "name": "2020 世界冠军杯",
+      "type": "world",
+      "status": "completed",
+      "formatKind": "knockout",
+      "startDate": "2020-07-01",
+      "endDate": "2020-08-01",
+      "champion": "TS",
+      "runnerUp": null,
+      "top4": [
+        "TS"
+      ],
+      "fmvp": null,
+      "summary": "世界冠军杯。",
+      "rulesSummary": "国际邀请淘汰赛。"
+    },
+    {
+      "id": "2021-spring",
+      "year": 2021,
+      "slug": "spring",
+      "name": "2021 KPL春季赛",
+      "type": "league",
+      "status": "completed",
+      "formatKind": "sab",
+      "startDate": "2021-03-01",
+      "endDate": "2021-06-01",
+      "champion": "南京Hero久竞",
+      "runnerUp": null,
+      "top4": [
+        "南京Hero久竞"
+      ],
+      "fmvp": "清融",
+      "summary": "SAB 分组升降赛制首次落地；临时席位引入。",
+      "rulesSummary": "季前赛定组后进入 S/A/B 三轮循环与卡位；残酷的降组淘汰。"
+    },
+    {
+      "id": "2021-autumn",
+      "year": 2021,
+      "slug": "autumn",
+      "name": "2021 KPL秋季赛",
+      "type": "league",
+      "status": "completed",
+      "formatKind": "sab",
+      "startDate": "2021-09-01",
+      "endDate": "2021-12-01",
+      "champion": "武汉eStarPro",
+      "runnerUp": "广州TTG",
+      "top4": [
+        "武汉eStarPro",
+        "广州TTG",
+        "重庆狼队",
+        "XYG"
+      ],
+      "fmvp": "花海",
+      "summary": "SAB 赛制深化，eStar 夺冠。",
+      "rulesSummary": "SAB 三轮 + 卡位 + BO7 双败季后赛。"
+    },
+    {
+      "id": "2021-winter-cup",
+      "year": 2021,
+      "slug": "winter-cup",
+      "name": "2021 冬季冠军杯",
+      "type": "cup",
+      "status": "completed",
+      "formatKind": "knockout",
+      "startDate": "2021-12-01",
+      "endDate": "2022-01-01",
+      "champion": "武汉eStarPro",
+      "runnerUp": null,
+      "top4": [
+        "武汉eStarPro"
+      ],
+      "fmvp": null,
+      "summary": "冬季冠军杯（挑战者杯前身体系）。",
+      "rulesSummary": "多赛道队伍参与的杯赛。"
+    },
+    {
+      "id": "2021-world-cup",
+      "year": 2021,
+      "slug": "world-cup",
+      "name": "2021 世界冠军杯",
+      "type": "world",
+      "status": "completed",
+      "formatKind": "knockout",
+      "startDate": "2021-07-01",
+      "endDate": "2021-08-01",
+      "champion": "重庆狼队",
+      "runnerUp": null,
+      "top4": [
+        "重庆狼队"
+      ],
+      "fmvp": null,
+      "summary": "世界冠军杯。",
+      "rulesSummary": "国际邀请淘汰赛。"
+    },
+    {
+      "id": "2022-spring",
+      "year": 2022,
+      "slug": "spring",
+      "name": "2022 KPL春季赛",
+      "type": "league",
+      "status": "completed",
+      "formatKind": "sab",
+      "startDate": "2022-02-01",
+      "endDate": "2022-05-01",
+      "champion": "武汉eStarPro",
+      "runnerUp": "重庆狼队",
+      "top4": [
+        "武汉eStarPro",
+        "重庆狼队",
+        "佛山GK",
+        "XYG"
+      ],
+      "fmvp": "坦然",
+      "summary": "赛历改为春夏；eStar 卫冕。",
+      "rulesSummary": "SAB 赛制。"
+    },
+    {
+      "id": "2022-summer",
+      "year": 2022,
+      "slug": "summer",
+      "name": "2022 KPL夏季赛",
+      "type": "league",
+      "status": "completed",
+      "formatKind": "sab",
+      "startDate": "2022-06-01",
+      "endDate": "2022-09-01",
+      "champion": "重庆狼队",
+      "runnerUp": "武汉eStarPro",
+      "top4": [
+        "重庆狼队",
+        "武汉eStarPro",
+        "北京WB",
+        "佛山DRG.GK"
+      ],
+      "fmvp": "小胖",
+      "summary": "首届夏季赛，狼队夺冠打断 eStar 连冠。",
+      "rulesSummary": "SAB 赛制。"
+    },
+    {
+      "id": "2022-challenger-cup",
+      "year": 2022,
+      "slug": "challenger-cup",
+      "name": "2022 挑战者杯",
+      "type": "cup",
+      "status": "completed",
+      "formatKind": "knockout",
+      "startDate": "2022-10-01",
+      "endDate": "2022-11-01",
+      "champion": "重庆狼队",
+      "runnerUp": null,
+      "top4": [
+        "重庆狼队"
+      ],
+      "fmvp": null,
+      "summary": "原冬季冠军杯演进为挑战者杯。",
+      "rulesSummary": "多赛道挑战者杯。"
+    },
+    {
+      "id": "2022-world-cup",
+      "year": 2022,
+      "slug": "world-cup",
+      "name": "2022 世界冠军杯",
+      "type": "world",
+      "status": "completed",
+      "formatKind": "knockout",
+      "startDate": "2022-12-01",
+      "endDate": "2022-12-20",
+      "champion": "武汉eStarPro",
+      "runnerUp": null,
+      "top4": [
+        "武汉eStarPro"
+      ],
+      "fmvp": null,
+      "summary": "世界赛移至年末。",
+      "rulesSummary": "国际邀请淘汰赛。"
+    },
+    {
+      "id": "2023-spring",
+      "year": 2023,
+      "slug": "spring",
+      "name": "2023 KPL春季赛",
+      "type": "league",
+      "status": "completed",
+      "formatKind": "sab",
+      "startDate": "2023-02-01",
+      "endDate": "2023-05-01",
+      "champion": "重庆狼队",
+      "runnerUp": "北京WB",
+      "top4": [
+        "重庆狼队",
+        "北京WB",
+        "佛山DRG",
+        "杭州LGD大鹅"
+      ],
+      "fmvp": "Fly",
+      "summary": "狼队卫冕春季赛。",
+      "rulesSummary": "SAB 赛制。"
+    },
+    {
+      "id": "2023-summer",
+      "year": 2023,
+      "slug": "summer",
+      "name": "2023 KPL夏季赛",
+      "type": "league",
+      "status": "completed",
+      "formatKind": "sab",
+      "startDate": "2023-06-01",
+      "endDate": "2023-09-01",
+      "champion": "广州TTG",
+      "runnerUp": "重庆狼队",
+      "top4": [
+        "广州TTG",
+        "重庆狼队",
+        "苏州KSG",
+        "北京WB"
+      ],
+      "fmvp": "不然",
+      "summary": "TTG 首次捧起联赛冠军。",
+      "rulesSummary": "SAB 赛制。"
+    },
+    {
+      "id": "2023-challenger-cup",
+      "year": 2023,
+      "slug": "challenger-cup",
+      "name": "2023 挑战者杯",
+      "type": "cup",
+      "status": "completed",
+      "formatKind": "knockout",
+      "startDate": "2023-10-01",
+      "endDate": "2023-11-01",
+      "champion": "成都AG超玩会",
+      "runnerUp": null,
+      "top4": [
+        "成都AG超玩会"
+      ],
+      "fmvp": null,
+      "summary": "挑战者杯。",
+      "rulesSummary": "多赛道挑战者杯。"
+    },
+    {
+      "id": "2023-world-cup",
+      "year": 2023,
+      "slug": "world-cup",
+      "name": "2023 世界冠军杯",
+      "type": "world",
+      "status": "completed",
+      "formatKind": "knockout",
+      "startDate": "2023-12-01",
+      "endDate": "2023-12-20",
+      "champion": "成都AG超玩会",
+      "runnerUp": null,
+      "top4": [
+        "成都AG超玩会"
+      ],
+      "fmvp": null,
+      "summary": "世界冠军杯。",
+      "rulesSummary": "国际邀请淘汰赛。"
+    },
+    {
+      "id": "2024-spring",
+      "year": 2024,
+      "slug": "spring",
+      "name": "2024 KPL春季赛",
+      "type": "league",
+      "status": "completed",
+      "formatKind": "sab",
+      "startDate": "2024-02-01",
+      "endDate": "2024-05-01",
+      "champion": "重庆狼队",
+      "runnerUp": "成都AG超玩会",
+      "top4": [
+        "重庆狼队",
+        "成都AG超玩会",
+        "苏州KSG",
+        "广州TTG"
+      ],
+      "fmvp": "小胖",
+      "summary": "狼队再夺春季赛。",
+      "rulesSummary": "SAB 赛制。"
+    },
+    {
+      "id": "2024-summer",
+      "year": 2024,
+      "slug": "summer",
+      "name": "2024 KPL夏季赛",
+      "type": "league",
+      "status": "completed",
+      "formatKind": "sab",
+      "startDate": "2024-06-01",
+      "endDate": "2024-09-01",
+      "champion": "成都AG超玩会",
+      "runnerUp": "苏州KSG",
+      "top4": [
+        "成都AG超玩会",
+        "苏州KSG",
+        "济南RW侠",
+        "重庆狼队"
+      ],
+      "fmvp": "钟意",
+      "summary": "AG 夏季赛夺冠，开启新周期。",
+      "rulesSummary": "SAB 赛制。"
+    },
+    {
+      "id": "2024-challenger-cup",
+      "year": 2024,
+      "slug": "challenger-cup",
+      "name": "2024 挑战者杯",
+      "type": "cup",
+      "status": "completed",
+      "formatKind": "knockout",
+      "startDate": "2024-10-01",
+      "endDate": "2024-11-01",
+      "champion": "成都AG超玩会",
+      "runnerUp": null,
+      "top4": [
+        "成都AG超玩会"
+      ],
+      "fmvp": null,
+      "summary": "挑战者杯。",
+      "rulesSummary": "多赛道挑战者杯。"
+    },
+    {
+      "id": "2024-grand-finals",
+      "year": 2024,
+      "slug": "grand-finals",
+      "name": "2024 KPL年度总决赛",
+      "type": "grand-finals",
+      "status": "completed",
+      "formatKind": "masters-elites",
+      "startDate": "2024-11-01",
+      "endDate": "2024-11-16",
+      "champion": "成都AG超玩会",
+      "runnerUp": "重庆狼队",
+      "top4": [
+        "成都AG超玩会",
+        "重庆狼队"
+      ],
+      "fmvp": "长生",
+      "summary": "首届年度总决赛，圣龙杯诞生。",
+      "rulesSummary": "大师组/精英组组外循环 + 突围赛 + BO7 双败淘汰。"
+    },
+    {
+      "id": "2025-spring",
+      "year": 2025,
+      "slug": "spring",
+      "name": "2025 KPL春季赛",
+      "type": "league",
+      "status": "completed",
+      "formatKind": "sab",
+      "startDate": "2025-02-01",
+      "endDate": "2025-05-01",
+      "champion": "成都AG超玩会",
+      "runnerUp": "佛山DRG",
+      "top4": [
+        "成都AG超玩会",
+        "佛山DRG",
+        "北京WB",
+        "济南RW侠"
+      ],
+      "fmvp": "钟意",
+      "summary": "AG 春季赛卫冕。",
+      "rulesSummary": "SAB 赛制。"
+    },
+    {
+      "id": "2025-summer",
+      "year": 2025,
+      "slug": "summer",
+      "name": "2025 KPL夏季赛",
+      "type": "league",
+      "status": "completed",
+      "formatKind": "sab",
+      "startDate": "2025-06-01",
+      "endDate": "2025-09-01",
+      "champion": "成都AG超玩会",
+      "runnerUp": "北京WB",
+      "top4": [
+        "成都AG超玩会",
+        "北京WB",
+        "广州TTG",
+        "重庆狼队"
+      ],
+      "fmvp": "大帅",
+      "summary": "AG 夏季赛再冠。",
+      "rulesSummary": "SAB 赛制。"
+    },
+    {
+      "id": "2025-challenger-cup",
+      "year": 2025,
+      "slug": "challenger-cup",
+      "name": "2025 挑战者杯",
+      "type": "cup",
+      "status": "completed",
+      "formatKind": "knockout",
+      "startDate": "2025-10-01",
+      "endDate": "2025-11-01",
+      "champion": "成都AG超玩会",
+      "runnerUp": null,
+      "top4": [
+        "成都AG超玩会"
+      ],
+      "fmvp": null,
+      "summary": "挑战者杯。",
+      "rulesSummary": "多赛道挑战者杯。"
+    },
+    {
+      "id": "2025-grand-finals",
+      "year": 2025,
+      "slug": "grand-finals",
+      "name": "2025 KPL年度总决赛",
+      "type": "grand-finals",
+      "status": "completed",
+      "formatKind": "masters-elites",
+      "startDate": "2025-11-01",
+      "endDate": "2025-11-08",
+      "champion": "成都AG超玩会",
+      "runnerUp": "重庆狼队",
+      "top4": [
+        "成都AG超玩会",
+        "重庆狼队"
+      ],
+      "fmvp": "一诺",
+      "summary": "AG 蝉联年总。",
+      "rulesSummary": "大师组/精英组赛制。"
+    },
+    {
+      "id": "2026-spring",
+      "year": 2026,
+      "slug": "spring",
+      "name": "2026 KPL春季赛",
+      "type": "league",
+      "status": "completed",
+      "formatKind": "sab",
+      "startDate": "2026-02-01",
+      "endDate": "2026-04-11",
+      "champion": "KSG",
+      "runnerUp": "重庆狼队",
+      "top4": [
+        "KSG",
+        "重庆狼队",
+        "成都AG超玩会",
+        "北京WB"
+      ],
+      "fmvp": "流浪",
+      "summary": "KSG 首次夺得联赛冠军。",
+      "rulesSummary": "SAB 三轮循环 + 卡位 + BO7 双败季后赛。"
+    },
+    {
+      "id": "2026-challenger-cup",
+      "year": 2026,
+      "slug": "challenger-cup",
+      "name": "2026 挑战者杯",
+      "type": "cup",
+      "status": "completed",
+      "formatKind": "knockout",
+      "startDate": "2026-04-25",
+      "endDate": "2026-05-23",
+      "champion": "重庆狼队",
+      "runnerUp": "成都AG超玩会",
+      "top4": [
+        "重庆狼队",
+        "成都AG超玩会"
+      ],
+      "fmvp": null,
+      "summary": "挑杯提档至春夏之间，纳入年总积分。",
+      "rulesSummary": "多赛道挑战者杯；成绩计入年度积分。"
+    },
+    {
+      "id": "2026-summer",
+      "year": 2026,
+      "slug": "summer",
+      "name": "2026 KPL夏季赛",
+      "type": "league",
+      "status": "ongoing",
+      "formatKind": "sab",
+      "startDate": "2026-06-17",
+      "endDate": "2026-09-12",
+      "champion": null,
+      "runnerUp": null,
+      "top4": null,
+      "fmvp": null,
+      "summary": "第21届联赛赛季，当前进行中（第二轮 SAB）。",
+      "rulesSummary": "SAB 赛制；详见赛季规则页。",
+      "detail": "2026/summer.json"
+    },
+    {
+      "id": "2026-grand-finals",
+      "year": 2026,
+      "slug": "grand-finals",
+      "name": "2026 KPL年度总决赛",
+      "type": "grand-finals",
+      "status": "upcoming",
+      "formatKind": "masters-elites",
+      "startDate": "2026-11-01",
+      "endDate": "2026-11-14",
+      "champion": null,
+      "runnerUp": null,
+      "top4": null,
+      "fmvp": null,
+      "summary": "年度最高规格赛事，总决赛计划于成都举行。",
+      "rulesSummary": "年度积分前12；大师/精英组 + 突围 + 双败淘汰。"
+    }
+  ]
+}
