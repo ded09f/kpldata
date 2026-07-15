@@ -10,11 +10,17 @@ export interface RankRow {
   gameDiff: number
 }
 
-/** 从已完成+假设结果计算组内排名：积分→净胜局→相互战绩→字典序 */
+/** 从已完成+假设结果计算组内排名：积分→净胜局(小分)→相互战绩→小分胜场→字典序 */
 export function rankGroup(
   teamIds: string[],
   completed: Match[],
-  hypothetical: Array<{ home: string; away: string; winner: string }>,
+  hypothetical: Array<{
+    home: string
+    away: string
+    winner: string
+    scoreHome?: number
+    scoreAway?: number
+  }>,
 ): string[] {
   const stats: Record<string, RankRow> = {}
   for (const id of teamIds) {
@@ -35,23 +41,16 @@ export function rankGroup(
     for (const b of teamIds) h2hWins[a][b] = 0
   }
 
-  const apply = (home: string, away: string, winner: string, gwHome = 3, gwAway = 1) => {
+  const apply = (home: string, away: string, winner: string, gwHome: number, gwAway: number) => {
     if (!stats[home] || !stats[away]) return
     const loser = winner === home ? away : home
     stats[winner].wins += 1
     stats[winner].points += 1
     stats[loser].losses += 1
-    if (winner === home) {
-      stats[home].gameWins += gwHome
-      stats[home].gameLosses += gwAway
-      stats[away].gameWins += gwAway
-      stats[away].gameLosses += gwHome
-    } else {
-      stats[away].gameWins += gwHome
-      stats[away].gameLosses += gwAway
-      stats[home].gameWins += gwAway
-      stats[home].gameLosses += gwHome
-    }
+    stats[home].gameWins += gwHome
+    stats[home].gameLosses += gwAway
+    stats[away].gameWins += gwAway
+    stats[away].gameLosses += gwHome
     h2hWins[winner][loser] += 1
   }
 
@@ -61,7 +60,9 @@ export function rankGroup(
     apply(m.home, m.away, m.winner, m.score.home, m.score.away)
   }
   for (const h of hypothetical) {
-    apply(h.home, h.away, h.winner, 3, 1)
+    const sh = h.scoreHome ?? (h.winner === h.home ? 3 : 1)
+    const sa = h.scoreAway ?? (h.winner === h.away ? 3 : 1)
+    apply(h.home, h.away, h.winner, sh, sa)
   }
 
   for (const id of teamIds) {

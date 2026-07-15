@@ -61,6 +61,12 @@ export function teamName(teams: Team[], id: string): string {
   return teamById(teams, id)?.name ?? id
 }
 
+/** 情景表用简称（去掉城市前缀），如 济南RW侠 → RW */
+export function teamShort(teams: Team[], id: string): string {
+  const t = teamById(teams, id)
+  return t?.shortName ?? t?.name ?? id
+}
+
 export function groupLabel(group: string): string {
   const map: Record<string, string> = {
     G1: '第一组',

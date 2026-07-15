@@ -8,6 +8,7 @@ import {
   type PlayoffLabel,
   type Stage2Label,
 } from '@/lib/qualify/rank'
+import { expandMatchOutcomes, type HypoResult } from '@/lib/qualify/scorelines'
 
 export interface MatchProb {
   home: string
@@ -36,36 +37,89 @@ export function completedInGroup(matches: Match[], stage: string, group: string)
   )
 }
 
-/** 穷举组内剩余场次，返回每条路径的排名与概率 */
+const EXACT_SCORE_MAX = 7 // 6^7 ≈ 28万；更大则改用蒙特卡洛
+
+/** 穷举组内剩余场次（含 BO5 小分 3-0/3-1/3-2），返回排名路径与概率 */
 export function enumerateGroupPaths(
   teamIds: string[],
   completed: Match[],
   remaining: MatchProb[],
-): Array<{ order: string[]; prob: number }> {
+  opts?: { seed?: number; mcSamples?: number },
+): Array<{ order: string[]; prob: number; results?: HypoResult[] }> {
   const n = remaining.length
   if (n === 0) {
     return [{ order: rankGroup(teamIds, completed, []), prob: 1 }]
   }
-  if (n > 14) {
-    throw new Error(`Too many remaining matches to enumerate: ${n}`)
+
+  const outcomesPerMatch = remaining.map((m) => expandMatchOutcomes(m.pHome))
+
+  if (n <= EXACT_SCORE_MAX) {
+    const out: Array<{ order: string[]; prob: number; results: HypoResult[] }> = []
+    const idxs = new Array(n).fill(0)
+    const walk = (depth: number, prob: number, hypo: HypoResult[]) => {
+      if (prob <= 0) return
+      if (depth === n) {
+        out.push({
+          order: rankGroup(teamIds, completed, hypo),
+          prob,
+          results: hypo.map((h) => ({ ...h })),
+        })
+        return
+      }
+      const m = remaining[depth]
+      for (const o of outcomesPerMatch[depth]) {
+        hypo.push({
+          home: m.home,
+          away: m.away,
+          winner: o.homeWins ? m.home : m.away,
+          scoreHome: o.scoreHome,
+          scoreAway: o.scoreAway,
+        })
+        walk(depth + 1, prob * o.prob, hypo)
+        hypo.pop()
+      }
+    }
+    walk(0, 1, [])
+    void idxs
+    return out
   }
 
-  const total = 1 << n
-  const out: Array<{ order: string[]; prob: number }> = []
-  for (let mask = 0; mask < total; mask++) {
-    let prob = 1
-    const hypo: Array<{ home: string; away: string; winner: string }> = []
+  // 场次过多：带小分的蒙特卡洛近似
+  const samples = opts?.mcSamples ?? 200_000
+  const rng = createRng(opts?.seed ?? MC_SEED)
+  const map = new Map<string, { order: string[]; prob: number; count: number }>()
+  for (let s = 0; s < samples; s++) {
+    const hypo: HypoResult[] = []
     for (let i = 0; i < n; i++) {
       const m = remaining[i]
-      const homeWins = ((mask >> i) & 1) === 1
-      const p = homeWins ? m.pHome : 1 - m.pHome
-      prob *= p
-      hypo.push({ home: m.home, away: m.away, winner: homeWins ? m.home : m.away })
+      const options = outcomesPerMatch[i]
+      let r = rng()
+      let chosen = options[options.length - 1]
+      for (const o of options) {
+        r -= o.prob
+        if (r <= 0) {
+          chosen = o
+          break
+        }
+      }
+      hypo.push({
+        home: m.home,
+        away: m.away,
+        winner: chosen.homeWins ? m.home : m.away,
+        scoreHome: chosen.scoreHome,
+        scoreAway: chosen.scoreAway,
+      })
     }
-    if (prob <= 0) continue
-    out.push({ order: rankGroup(teamIds, completed, hypo), prob })
+    const order = rankGroup(teamIds, completed, hypo)
+    const key = order.join(',')
+    const prev = map.get(key)
+    if (prev) prev.count += 1
+    else map.set(key, { order, prob: 0, count: 1 })
   }
-  return out
+  return [...map.values()].map((v) => ({
+    order: v.order,
+    prob: v.count / samples,
+  }))
 }
 
 export function collapsePaths(
@@ -235,10 +289,25 @@ export function monteCarloPlayoffOutlook(
   }
 
   const sampleRemaining = (rem: MatchProb[]) => {
-    const hypo: Array<{ home: string; away: string; winner: string }> = []
+    const hypo: HypoResult[] = []
     for (const m of rem) {
-      const homeWins = rng() < m.pHome
-      hypo.push({ home: m.home, away: m.away, winner: homeWins ? m.home : m.away })
+      const options = expandMatchOutcomes(m.pHome)
+      let r = rng()
+      let chosen = options[options.length - 1]
+      for (const o of options) {
+        r -= o.prob
+        if (r <= 0) {
+          chosen = o
+          break
+        }
+      }
+      hypo.push({
+        home: m.home,
+        away: m.away,
+        winner: chosen.homeWins ? m.home : m.away,
+        scoreHome: chosen.scoreHome,
+        scoreAway: chosen.scoreAway,
+      })
     }
     return hypo
   }
@@ -285,13 +354,29 @@ export function monteCarloPlayoffOutlook(
     }
 
     const simRoundRobin = (ids: string[]) => {
-      const hypo: Array<{ home: string; away: string; winner: string }> = []
+      const hypo: HypoResult[] = []
       for (let a = 0; a < ids.length; a++) {
         for (let b = a + 1; b < ids.length; b++) {
           const home = ids[a]
           const away = ids[b]
           const p = seatWinProb(matches, teams, home, away, cache)
-          hypo.push({ home, away, winner: rng() < p ? home : away })
+          const options = expandMatchOutcomes(p)
+          let r = rng()
+          let chosen = options[options.length - 1]
+          for (const o of options) {
+            r -= o.prob
+            if (r <= 0) {
+              chosen = o
+              break
+            }
+          }
+          hypo.push({
+            home,
+            away,
+            winner: chosen.homeWins ? home : away,
+            scoreHome: chosen.scoreHome,
+            scoreAway: chosen.scoreAway,
+          })
         }
       }
       return rankGroup(ids, [], hypo)
@@ -352,10 +437,25 @@ export async function monteCarloPlayoffOutlookAsync(
   }
 
   const sampleRemaining = (rem: MatchProb[]) => {
-    const hypo: Array<{ home: string; away: string; winner: string }> = []
+    const hypo: HypoResult[] = []
     for (const m of rem) {
-      const homeWins = rng() < m.pHome
-      hypo.push({ home: m.home, away: m.away, winner: homeWins ? m.home : m.away })
+      const options = expandMatchOutcomes(m.pHome)
+      let r = rng()
+      let chosen = options[options.length - 1]
+      for (const o of options) {
+        r -= o.prob
+        if (r <= 0) {
+          chosen = o
+          break
+        }
+      }
+      hypo.push({
+        home: m.home,
+        away: m.away,
+        winner: chosen.homeWins ? m.home : m.away,
+        scoreHome: chosen.scoreHome,
+        scoreAway: chosen.scoreAway,
+      })
     }
     return hypo
   }
@@ -397,13 +497,29 @@ export async function monteCarloPlayoffOutlookAsync(
     }
 
     const simRoundRobin = (ids: string[]) => {
-      const hypo: Array<{ home: string; away: string; winner: string }> = []
+      const hypo: HypoResult[] = []
       for (let a = 0; a < ids.length; a++) {
         for (let b = a + 1; b < ids.length; b++) {
           const home = ids[a]
           const away = ids[b]
           const p = seatWinProb(matches, teams, home, away, cache)
-          hypo.push({ home, away, winner: rng() < p ? home : away })
+          const options = expandMatchOutcomes(p)
+          let r = rng()
+          let chosen = options[options.length - 1]
+          for (const o of options) {
+            r -= o.prob
+            if (r <= 0) {
+              chosen = o
+              break
+            }
+          }
+          hypo.push({
+            home,
+            away,
+            winner: chosen.homeWins ? home : away,
+            scoreHome: chosen.scoreHome,
+            scoreAway: chosen.scoreAway,
+          })
         }
       }
       return rankGroup(ids, [], hypo)

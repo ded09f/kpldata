@@ -9,7 +9,7 @@ import {
 } from '@/lib/qualify/outlook'
 import { buildGroupScenarios } from '@/lib/qualify/scenarios'
 import { MC_ITERATIONS, MC_SEED } from '@/lib/qualify/rng'
-import { pct, teamName } from '@/lib/formatters'
+import { pct, teamName, teamShort } from '@/lib/formatters'
 import type { PlayoffLabel, Stage2Label } from '@/lib/qualify/rank'
 
 const STAGE2_LABEL_TEXT: Record<Stage2Label, string> = {
@@ -21,11 +21,11 @@ const STAGE2_LABEL_TEXT: Record<Stage2Label, string> = {
 }
 
 const STAGE2_COLORS: Record<Stage2Label, string> = {
-  'S3-lock': '#f59e0b',
-  'seat-SA': '#ec4899',
-  'A3-lock': '#06b6d4',
-  'seat-AB': '#a855f7',
-  'elim-B': '#64748b',
+  'S3-lock': '#e8b4b8',
+  'seat-SA': '#c3aed6',
+  'A3-lock': '#a8d8ea',
+  'seat-AB': '#d4a5a5',
+  'elim-B': '#b8b8aa',
 }
 
 const PLAYOFF_TEXT: Record<PlayoffLabel, string> = {
@@ -36,13 +36,13 @@ const PLAYOFF_TEXT: Record<PlayoffLabel, string> = {
   'out-early': '第二轮/卡位淘汰',
 }
 
-/** 高对比度：金 / 蓝 / 青 / 橙红 / 灰紫 */
+/** 马卡龙 / 莫兰迪：豆沙粉、雾霾蓝、豆青绿、焦糖杏、暖灰 */
 const PLAYOFF_COLORS: Record<PlayoffLabel, string> = {
-  upper: '#f59e0b',
-  'lower-R2': '#3b82f6',
-  'lower-R1': '#14b8a6',
-  'out-A56': '#f97316',
-  'out-early': '#94a3b8',
+  upper: '#e8b4b8',
+  'lower-R2': '#9bb7d4',
+  'lower-R1': '#a8c5b8',
+  'out-A56': '#e0c4a8',
+  'out-early': '#c5c0b8',
 }
 
 export function OutlookPage() {
@@ -116,7 +116,7 @@ export function OutlookPage() {
   }, [season.matches])
 
   const scenarios = useMemo(() => {
-    if (!groups) return { remaining: [], groups: [], totalPaths: 0 }
+    if (!groups) return { remaining: [], groups: [], totalPaths: 0, mode: 'exact' as const }
     return buildGroupScenarios(season.matches, season.teams, scenarioGroup, groups[scenarioGroup])
   }, [season, scenarioGroup, groups])
 
@@ -244,13 +244,17 @@ export function OutlookPage() {
                 }}
               >
                 {g} 组剩余（{remCounts[g]} 场
-                {scenarioGroup === g ? ` · ${scenarios.totalPaths} 种赛程` : ''}）
+                {scenarioGroup === g
+                  ? ` · ${scenarios.mode === 'exact' ? `${scenarios.totalPaths} 种含小分赛程` : `MC ${scenarios.totalPaths.toLocaleString()} 次`}`
+                  : ''}
+                ）
               </button>
             ))}
           </div>
 
           <p className="muted" style={{ margin: 0, fontSize: '0.9rem' }}>
-            下列每一组是一种「最终名次/晋级标签」结果；组内列出能产生该结果的剩余比赛胜负组合（场次多时仅展示概率最高的路径）。
+            下列每一组是一种「最终名次/晋级标签」结果（已计入 BO5 小分 3-0/3-1/3-2 对净胜局的影响）。
+            组内列出对应赛程；队名使用简称以节省宽度。剩余场次较多时用蒙特卡洛抽样。
           </p>
 
           {scenarios.remaining.length === 0 ? (
@@ -290,7 +294,7 @@ export function OutlookPage() {
                           <th>#</th>
                           {scenarios.remaining.map((m) => (
                             <th key={`${m.home}-${m.away}`}>
-                              {teamName(season.teams, m.home)} vs {teamName(season.teams, m.away)}
+                              {teamShort(season.teams, m.home)}-{teamShort(season.teams, m.away)}
                             </th>
                           ))}
                           <th>路径概率</th>
@@ -300,14 +304,18 @@ export function OutlookPage() {
                         {g.paths.map((p, idx) => (
                           <tr key={idx}>
                             <td>{idx + 1}</td>
-                            {p.results.map((homeWins, i) => (
-                              <td key={i} className={homeWins ? 'gold' : ''}>
-                                {homeWins
-                                  ? teamName(season.teams, scenarios.remaining[i].home)
-                                  : teamName(season.teams, scenarios.remaining[i].away)}
-                                胜
-                              </td>
-                            ))}
+                            {p.scores.map((score, i) => {
+                              const r = p.results[i]
+                              const homeShort = teamShort(season.teams, scenarios.remaining[i].home)
+                              const awayShort = teamShort(season.teams, scenarios.remaining[i].away)
+                              const winnerShort = r.winner === r.home ? homeShort : awayShort
+                              return (
+                                <td key={i}>
+                                  <span className="gold">{winnerShort}</span>
+                                  <span className="muted"> {score}</span>
+                                </td>
+                              )
+                            })}
                             <td>{pct(p.prob, 2)}</td>
                           </tr>
                         ))}

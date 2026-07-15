@@ -27,10 +27,15 @@ describe('outlook integration', () => {
     expect(a[0].probs.upper).toBe(b[0].probs.upper)
   })
 
-  it('scenarios enumerate all paths for a group', () => {
+  it('scenarios enumerate scoreline-aware paths for a group', () => {
     const rem = season.matches.filter((m) => m.stage === 'stage2' && m.group === 'S' && m.status === 'scheduled')
     const sc = buildGroupScenarios(season.matches, season.teams, 'S', groups.S)
-    expect(sc.totalPaths).toBe(2 ** rem.length)
+    if (rem.length <= 7) {
+      expect(sc.mode).toBe('exact')
+      expect(sc.totalPaths).toBe(Math.round(6 ** rem.length))
+    } else {
+      expect(sc.mode).toBe('mc')
+    }
     const probSum = sc.groups.reduce((s, g) => s + g.probability, 0)
     expect(probSum).toBeGreaterThan(0.98)
     expect(probSum).toBeLessThan(1.02)
