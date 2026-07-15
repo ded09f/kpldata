@@ -10,4 +10,4 @@ export function createRng(seed: number): () => number {
 }
 
 export const MC_SEED = 42
-export const MC_ITERATIONS = 10000
+export const MC_ITERATIONS = 1_000_000

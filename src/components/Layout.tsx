@@ -2,6 +2,7 @@ import { NavLink, Outlet } from 'react-router-dom'
 import { META, SEASON_INDEX } from '@/data/catalog'
 import { SeasonSwitcher } from '@/components/SeasonSwitcher'
 import { formatDate } from '@/lib/formatters'
+import { useTheme } from '@/theme/ThemeProvider'
 
 const links = [
   { to: '/', label: '总览', end: true },
@@ -17,6 +18,8 @@ const links = [
 ]
 
 export function Layout() {
+  const { theme, toggleTheme } = useTheme()
+
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <header
@@ -25,7 +28,7 @@ export function Layout() {
           top: 0,
           zIndex: 40,
           backdropFilter: 'blur(12px)',
-          background: 'rgba(11, 15, 25, 0.85)',
+          background: 'var(--header-bg)',
           borderBottom: '1px solid var(--border)',
         }}
       >
@@ -64,6 +67,16 @@ export function Layout() {
               </div>
             </NavLink>
             <SeasonSwitcher />
+            <button
+              type="button"
+              className="btn"
+              onClick={toggleTheme}
+              aria-label={theme === 'dark' ? '切换到白日模式' : '切换到黑夜模式'}
+              title={theme === 'dark' ? '白日模式' : '黑夜模式'}
+              style={{ padding: '0.4rem 0.7rem' }}
+            >
+              {theme === 'dark' ? '白日' : '黑夜'}
+            </button>
           </div>
           <nav style={{ display: 'flex', gap: '0.25rem', flexWrap: 'wrap' }}>
             {links.map((l) => (
@@ -87,10 +100,17 @@ export function Layout() {
       </main>
 
       <footer style={{ borderTop: '1px solid var(--border)', padding: '1.25rem 0' }}>
-        <div className="container muted" style={{ fontSize: '0.85rem', display: 'flex', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap' }}>
-          <span>
-            数据更新于 {formatDate(SEASON_INDEX.updatedAt, true)} · 非官方粉丝数据站
-          </span>
+        <div
+          className="container muted"
+          style={{
+            fontSize: '0.85rem',
+            display: 'flex',
+            justifyContent: 'space-between',
+            gap: '1rem',
+            flexWrap: 'wrap',
+          }}
+        >
+          <span>数据更新于 {formatDate(SEASON_INDEX.updatedAt, true)} · 非官方粉丝数据站</span>
           <a href={META.repo} target="_blank" rel="noreferrer" className="gold">
             GitHub
           </a>

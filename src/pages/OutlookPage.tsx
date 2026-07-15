@@ -1,12 +1,16 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { getDefaultSeason } from '@/data/catalog'
 import official from '@/data/rules/kpl-2026-official.json'
 import { TeamAvatar } from '@/components/TeamChip'
-import { computeStage2Outlooks, monteCarloPlayoffOutlook } from '@/lib/qualify/outlook'
+import {
+  computeStage2Outlooks,
+  monteCarloPlayoffOutlookAsync,
+  type TeamPlayoffOutlook,
+} from '@/lib/qualify/outlook'
 import { buildGroupScenarios } from '@/lib/qualify/scenarios'
 import { MC_ITERATIONS, MC_SEED } from '@/lib/qualify/rng'
 import { pct, teamName } from '@/lib/formatters'
-import type { Stage2Label } from '@/lib/qualify/rank'
+import type { PlayoffLabel, Stage2Label } from '@/lib/qualify/rank'
 
 const STAGE2_LABEL_TEXT: Record<Stage2Label, string> = {
   'S3-lock': '直通第三轮 S',
@@ -16,13 +20,30 @@ const STAGE2_LABEL_TEXT: Record<Stage2Label, string> = {
   'elim-B': 'B组直接淘汰',
 }
 
-const PLAYOFF_TEXT = {
+const STAGE2_COLORS: Record<Stage2Label, string> = {
+  'S3-lock': '#f59e0b',
+  'seat-SA': '#ec4899',
+  'A3-lock': '#06b6d4',
+  'seat-AB': '#a855f7',
+  'elim-B': '#64748b',
+}
+
+const PLAYOFF_TEXT: Record<PlayoffLabel, string> = {
   upper: '胜者组',
   'lower-R2': '败者组第二轮',
   'lower-R1': '败者组第一轮',
   'out-A56': '第三轮 A5/A6 淘汰',
   'out-early': '第二轮/卡位淘汰',
-} as const
+}
+
+/** 高对比度：金 / 蓝 / 青 / 橙红 / 灰紫 */
+const PLAYOFF_COLORS: Record<PlayoffLabel, string> = {
+  upper: '#f59e0b',
+  'lower-R2': '#3b82f6',
+  'lower-R1': '#14b8a6',
+  'out-A56': '#f97316',
+  'out-early': '#94a3b8',
+}
 
 export function OutlookPage() {
   const season = getDefaultSeason()
@@ -36,20 +57,50 @@ export function OutlookPage() {
     return computeStage2Outlooks(season.matches, season.teams, groups)
   }, [season, groups])
 
-  const playoffOutlooks = useMemo(() => {
-    if (!groups) return []
-    return monteCarloPlayoffOutlook(season.matches, season.teams, groups)
+  const [playoffOutlooks, setPlayoffOutlooks] = useState<TeamPlayoffOutlook[]>([])
+  const [mcProgress, setMcProgress] = useState(0)
+  const [mcRunning, setMcRunning] = useState(false)
+  const [mcError, setMcError] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (!groups) return
+    const ac = new AbortController()
+    setMcRunning(true)
+    setMcProgress(0)
+    setMcError(null)
+    setPlayoffOutlooks([])
+
+    void monteCarloPlayoffOutlookAsync(season.matches, season.teams, groups, {
+      iterations: MC_ITERATIONS,
+      seed: MC_SEED,
+      chunkSize: 2500,
+      signal: ac.signal,
+      onProgress: (done, total) => setMcProgress(done / total),
+    })
+      .then((result) => {
+        if (!ac.signal.aborted) {
+          setPlayoffOutlooks(result)
+          setMcRunning(false)
+          setMcProgress(1)
+        }
+      })
+      .catch((err: unknown) => {
+        if (ac.signal.aborted) return
+        setMcRunning(false)
+        setMcError(err instanceof Error ? err.message : '模拟失败')
+      })
+
+    return () => ac.abort()
   }, [season, groups])
 
   const playoffById = useMemo(() => {
-    const m = new Map(playoffOutlooks.map((p) => [p.teamId, p]))
-    return m
+    return new Map(playoffOutlooks.map((p) => [p.teamId, p]))
   }, [playoffOutlooks])
 
   const sortedTeams = useMemo(() => {
     return [...stage2Outlooks].sort((a, b) => {
-      const pa = playoffById.get(a.teamId)?.probs.upper ?? 0
-      const pb = playoffById.get(b.teamId)?.probs.upper ?? 0
+      const pa = playoffById.get(a.teamId)?.probs.upper ?? a.afterSeat.toS3
+      const pb = playoffById.get(b.teamId)?.probs.upper ?? b.afterSeat.toS3
       return pb - pa
     })
   }, [stage2Outlooks, playoffById])
@@ -79,7 +130,7 @@ export function OutlookPage() {
         <h1 style={{ margin: '0 0 0.35rem' }}>晋级前景</h1>
         <p className="muted" style={{ margin: 0 }}>
           基于官方规则 {official.seat.rule} / {official.playoffs.rule}，用本赛季战绩模型推断剩余第二轮与卡位赛，
-          并以蒙特卡洛（seed={MC_SEED}，N={MC_ITERATIONS}）模拟第三轮→季后赛入口。
+          并以蒙特卡洛（seed={MC_SEED}，N={MC_ITERATIONS.toLocaleString('en-US')}）模拟第三轮→季后赛入口。
         </p>
       </header>
 
@@ -89,6 +140,19 @@ export function OutlookPage() {
         {official.seat.ab.join('；')}（{official.seat.abResult}）。
         季后赛：{official.playoffs.teams}。{official.playoffs.bracketNote}
       </div>
+
+      {mcRunning && (
+        <div className="card card-pad">
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
+            <strong>季后赛入口模拟中…</strong>
+            <span className="muted">{Math.round(mcProgress * 100)}%</span>
+          </div>
+          <div className="prob-track" style={{ height: 10 }}>
+            <div style={{ width: `${mcProgress * 100}%`, background: 'var(--gold)' }} />
+          </div>
+        </div>
+      )}
+      {mcError && <div className="card card-pad" style={{ color: 'var(--red)' }}>{mcError}</div>}
 
       <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
         <button type="button" className={`tab${tab === 'teams' ? ' active' : ''}`} onClick={() => setTab('teams')}>
@@ -107,7 +171,7 @@ export function OutlookPage() {
         <div style={{ display: 'grid', gap: '0.85rem' }}>
           {sortedTeams.map((o) => {
             const team = season.teams.find((t) => t.id === o.teamId)
-            const pf = playoffById.get(o.teamId)!
+            const pf = playoffById.get(o.teamId)
             return (
               <article key={o.teamId} className="card card-pad" style={{ display: 'grid', gap: '0.75rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', gap: '0.75rem', flexWrap: 'wrap' }}>
@@ -132,7 +196,11 @@ export function OutlookPage() {
                   <ProbRow
                     items={(Object.keys(STAGE2_LABEL_TEXT) as Stage2Label[])
                       .filter((k) => o.labels[k] > 0.005)
-                      .map((k) => ({ label: STAGE2_LABEL_TEXT[k], value: o.labels[k] }))}
+                      .map((k) => ({
+                        label: STAGE2_LABEL_TEXT[k],
+                        value: o.labels[k],
+                        color: STAGE2_COLORS[k],
+                      }))}
                   />
                 </div>
 
@@ -140,11 +208,21 @@ export function OutlookPage() {
                   <div className="muted" style={{ fontSize: '0.8rem', marginBottom: 4 }}>
                     季后赛入口（含第三轮模拟）
                   </div>
-                  <ProbRow
-                    items={(Object.keys(PLAYOFF_TEXT) as (keyof typeof PLAYOFF_TEXT)[])
-                      .filter((k) => pf.probs[k] > 0.005)
-                      .map((k) => ({ label: PLAYOFF_TEXT[k], value: pf.probs[k] }))}
-                  />
+                  {pf ? (
+                    <ProbRow
+                      items={(Object.keys(PLAYOFF_TEXT) as PlayoffLabel[])
+                        .filter((k) => pf.probs[k] > 0.005)
+                        .map((k) => ({
+                          label: PLAYOFF_TEXT[k],
+                          value: pf.probs[k],
+                          color: PLAYOFF_COLORS[k],
+                        }))}
+                    />
+                  ) : (
+                    <div className="muted" style={{ fontSize: '0.85rem' }}>
+                      {mcRunning ? '等待模拟完成…' : '暂无数据'}
+                    </div>
+                  )}
                 </div>
               </article>
             )
@@ -187,7 +265,11 @@ export function OutlookPage() {
                       {g.pathCount} 种赛程
                     </span>
                   </div>
-                  <button type="button" className="btn" onClick={() => setExpanded(expanded === g.fingerprint ? null : g.fingerprint)}>
+                  <button
+                    type="button"
+                    className="btn"
+                    onClick={() => setExpanded(expanded === g.fingerprint ? null : g.fingerprint)}
+                  >
                     {expanded === g.fingerprint ? '收起赛程' : '查看对应赛程'}
                   </button>
                 </div>
@@ -242,18 +324,18 @@ export function OutlookPage() {
   )
 }
 
-function ProbRow({ items }: { items: Array<{ label: string; value: number }> }) {
+function ProbRow({ items }: { items: Array<{ label: string; value: number; color: string }> }) {
   const total = items.reduce((s, i) => s + i.value, 0) || 1
   return (
     <div style={{ display: 'grid', gap: '0.35rem' }}>
-      <div className="prob-track" style={{ height: 10 }}>
+      <div className="prob-track" style={{ height: 12 }}>
         {items.map((item) => (
           <div
             key={item.label}
             title={`${item.label} ${pct(item.value)}`}
             style={{
               width: `${(item.value / total) * 100}%`,
-              background: colorFor(item.label),
+              background: item.color,
             }}
           />
         ))}
@@ -261,20 +343,10 @@ function ProbRow({ items }: { items: Array<{ label: string; value: number }> }) 
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.65rem', fontSize: '0.85rem' }}>
         {items.map((item) => (
           <span key={item.label}>
-            <span style={{ color: colorFor(item.label) }}>●</span> {item.label}{' '}
-            <strong>{pct(item.value)}</strong>
+            <span style={{ color: item.color }}>●</span> {item.label} <strong>{pct(item.value)}</strong>
           </span>
         ))}
       </div>
     </div>
   )
-}
-
-function colorFor(label: string): string {
-  if (label.includes('胜者') || label.includes('直通第三轮 S') || label.includes('S')) return '#f5a524'
-  if (label.includes('败者组第二')) return '#60a5fa'
-  if (label.includes('败者组第一') || label.includes('直通第三轮 A') || label.includes('A')) return '#3b82f6'
-  if (label.includes('卡位')) return '#f472b6'
-  if (label.includes('淘汰') || label.includes('出局')) return '#94a3b8'
-  return '#a78bfa'
 }

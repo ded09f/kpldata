@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
-:root {
+:root,
+[data-theme='dark'] {
   color-scheme: dark;
   --bg: #0b0f19;
   --bg-elevated: #121826;
@@ -16,6 +17,32 @@
   --s: #f5a524;
   --a: #3b82f6;
   --b: #a78bfa;
+  --header-bg: rgba(11, 15, 25, 0.85);
+  --card-shine: rgba(255, 255, 255, 0.03);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  --prob-track: #1f2937;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f4f6fb;
+  --bg-elevated: #ffffff;
+  --bg-soft: #eef2f8;
+  --border: #d5dceb;
+  --text: #152033;
+  --muted: #5b6b86;
+  --gold: #c47d00;
+  --gold-soft: rgba(196, 125, 0, 0.12);
+  --blue: #2563eb;
+  --green: #16a34a;
+  --red: #dc2626;
+  --s: #c47d00;
+  --a: #2563eb;
+  --b: #7c3aed;
+  --header-bg: rgba(244, 246, 251, 0.9);
+  --card-shine: rgba(15, 23, 42, 0.02);
+  --shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --prob-track: #e2e8f0;
 }
 
 * {
@@ -32,11 +59,12 @@ body {
   margin: 0;
   font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
   background:
-    radial-gradient(1200px 600px at 10% -10%, rgba(245, 165, 36, 0.12), transparent 50%),
-    radial-gradient(900px 500px at 90% 0%, rgba(59, 130, 246, 0.12), transparent 45%),
+    radial-gradient(1200px 600px at 10% -10%, color-mix(in srgb, var(--gold) 18%, transparent), transparent 50%),
+    radial-gradient(900px 500px at 90% 0%, color-mix(in srgb, var(--blue) 14%, transparent), transparent 45%),
     var(--bg);
   color: var(--text);
   line-height: 1.5;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 a {
@@ -56,10 +84,10 @@ select {
 }
 
 .card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 40%), var(--bg-elevated);
+  background: linear-gradient(180deg, var(--card-shine), transparent 40%), var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow);
 }
 
 .card-pad {
@@ -232,7 +260,7 @@ table.data tr:hover td {
   height: 12px;
   border-radius: 999px;
   overflow: hidden;
-  background: #1f2937;
+  background: var(--prob-track);
   display: flex;
 }
 

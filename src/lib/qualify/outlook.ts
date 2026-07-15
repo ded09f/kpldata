@@ -317,3 +317,123 @@ export function monteCarloPlayoffOutlook(
     return { teamId: t.id, probs }
   })
 }
+
+/** 分块异步蒙特卡洛，避免主线程长时间卡死 */
+export async function monteCarloPlayoffOutlookAsync(
+  matches: Match[],
+  teams: Team[],
+  groups: Record<string, string[]>,
+  options?: {
+    iterations?: number
+    seed?: number
+    chunkSize?: number
+    onProgress?: (done: number, total: number) => void
+    signal?: AbortSignal
+  },
+): Promise<TeamPlayoffOutlook[]> {
+  const iterations = options?.iterations ?? MC_ITERATIONS
+  const seed = options?.seed ?? MC_SEED
+  const chunkSize = options?.chunkSize ?? 2500
+  const onProgress = options?.onProgress
+  const signal = options?.signal
+
+  const rng = createRng(seed)
+  const cache = new Map<string, number>()
+  const remByGroup: Record<string, MatchProb[]> = {}
+  const doneByGroup: Record<string, Match[]> = {}
+  for (const g of ['S', 'A', 'B'] as const) {
+    remByGroup[g] = remainingMatchProbs(matches, teams, 'stage2', g)
+    doneByGroup[g] = completedInGroup(matches, 'stage2', g)
+  }
+
+  const counts: Record<string, Record<PlayoffLabel, number>> = {}
+  for (const t of teams) {
+    counts[t.id] = { upper: 0, 'lower-R2': 0, 'lower-R1': 0, 'out-A56': 0, 'out-early': 0 }
+  }
+
+  const sampleRemaining = (rem: MatchProb[]) => {
+    const hypo: Array<{ home: string; away: string; winner: string }> = []
+    for (const m of rem) {
+      const homeWins = rng() < m.pHome
+      hypo.push({ home: m.home, away: m.away, winner: homeWins ? m.home : m.away })
+    }
+    return hypo
+  }
+
+  const runOne = () => {
+    const orderS = rankGroup(groups.S, doneByGroup.S, sampleRemaining(remByGroup.S))
+    const orderA = rankGroup(groups.A, doneByGroup.A, sampleRemaining(remByGroup.A))
+    const orderB = rankGroup(groups.B, doneByGroup.B, sampleRemaining(remByGroup.B))
+
+    for (const tid of orderB.slice(2)) counts[tid]['out-early'] += 1
+
+    const stage3S: string[] = orderS.slice(0, 4)
+    const stage3A: string[] = orderA.slice(2, 4)
+    for (const [sTeam, aTeam] of [
+      [orderS[4], orderA[1]],
+      [orderS[5], orderA[0]],
+    ] as const) {
+      const p = seatWinProb(matches, teams, sTeam, aTeam, cache)
+      if (rng() < p) {
+        stage3S.push(sTeam)
+        stage3A.push(aTeam)
+      } else {
+        stage3S.push(aTeam)
+        stage3A.push(sTeam)
+      }
+    }
+    for (const [aTeam, bTeam] of [
+      [orderA[4], orderB[1]],
+      [orderA[5], orderB[0]],
+    ] as const) {
+      const p = seatWinProb(matches, teams, aTeam, bTeam, cache)
+      if (rng() < p) {
+        stage3A.push(aTeam)
+        counts[bTeam]['out-early'] += 1
+      } else {
+        stage3A.push(bTeam)
+        counts[aTeam]['out-early'] += 1
+      }
+    }
+
+    const simRoundRobin = (ids: string[]) => {
+      const hypo: Array<{ home: string; away: string; winner: string }> = []
+      for (let a = 0; a < ids.length; a++) {
+        for (let b = a + 1; b < ids.length; b++) {
+          const home = ids[a]
+          const away = ids[b]
+          const p = seatWinProb(matches, teams, home, away, cache)
+          hypo.push({ home, away, winner: rng() < p ? home : away })
+        }
+      }
+      return rankGroup(ids, [], hypo)
+    }
+
+    const finalS = simRoundRobin(stage3S)
+    const finalA = simRoundRobin(stage3A)
+    finalS.forEach((tid, idx) => {
+      counts[tid][playoffLabelFromStage3('S', idx + 1)] += 1
+    })
+    finalA.forEach((tid, idx) => {
+      counts[tid][playoffLabelFromStage3('A', idx + 1)] += 1
+    })
+  }
+
+  for (let done = 0; done < iterations; ) {
+    if (signal?.aborted) throw new DOMException('Aborted', 'AbortError')
+    const end = Math.min(done + chunkSize, iterations)
+    for (let i = done; i < end; i++) runOne()
+    done = end
+    onProgress?.(done, iterations)
+    await new Promise<void>((resolve) => setTimeout(resolve, 0))
+  }
+
+  return teams.map((t) => {
+    const c = counts[t.id]
+    const probs = { ...c } as Record<PlayoffLabel, number>
+    for (const k of Object.keys(probs) as PlayoffLabel[]) {
+      probs[k] = c[k] / iterations
+    }
+    return { teamId: t.id, probs }
+  })
+}

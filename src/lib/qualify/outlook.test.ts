@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { getDefaultSeason } from '@/data/catalog'
 import { computeStage2Outlooks, monteCarloPlayoffOutlook } from '@/lib/qualify/outlook'
 import { buildGroupScenarios } from '@/lib/qualify/scenarios'
-import { MC_SEED } from '@/lib/qualify/rng'
+import { MC_ITERATIONS, MC_SEED } from '@/lib/qualify/rng'
 
 describe('outlook integration', () => {
   const season = getDefaultSeason()
@@ -34,5 +34,9 @@ describe('outlook integration', () => {
     const probSum = sc.groups.reduce((s, g) => s + g.probability, 0)
     expect(probSum).toBeGreaterThan(0.98)
     expect(probSum).toBeLessThan(1.02)
+  })
+
+  it('uses one million Monte Carlo iterations', () => {
+    expect(MC_ITERATIONS).toBe(1_000_000)
   })
 })

@@ -26,6 +26,6 @@
   },
   "monteCarlo": {
     "seed": 42,
-    "iterations": 10000
+    "iterations": 1000000
   }
 }
