@@ -1,21 +1,28 @@
 import { useMemo, useState } from 'react'
 import { getDefaultSeason } from '@/data/catalog'
 import { StandingTableView } from '@/components/StandingTableView'
+import { formatStandingHint, getStageById } from '@/lib/standings'
 
 export function StandingsPage() {
   const season = getDefaultSeason()
   const [stageId, setStageId] = useState(season.currentStage ?? season.standings[0]?.stage)
-  const stage = useMemo(
-    () => season.standings.find((s) => s.stage === stageId) ?? season.standings[0],
-    [season, stageId],
-  )
+  const stage = useMemo(() => getStageById(season.standings, stageId), [season, stageId])
+
+  if (!stage) {
+    return (
+      <div className="card card-pad">
+        <h1 style={{ marginTop: 0 }}>积分榜</h1>
+        <p className="muted">当前赛季暂无积分数据。</p>
+      </div>
+    )
+  }
 
   return (
     <div style={{ display: 'grid', gap: '1rem' }}>
       <header>
         <h1 style={{ margin: '0 0 0.35rem' }}>积分榜</h1>
         <p className="muted" style={{ margin: 0 }}>
-          按赛制阶段查看 SAB 分组排名。左侧色条表示晋级/卡位/淘汰形势。
+          {formatStandingHint(season.formatKind)}
         </p>
       </header>
       <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>

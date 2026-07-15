@@ -63,16 +63,20 @@ export function SchedulePage() {
           </button>
         ))}
       </div>
-      <div style={{ display: 'grid', gap: '0.85rem', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
-        {filtered.map((m) => (
-          <div key={m.id}>
-            <div className="muted" style={{ fontSize: '0.75rem', marginBottom: '0.35rem' }}>
-              {m.group ? groupLabel(m.group) : m.stage}
+      {filtered.length === 0 ? (
+        <div className="card card-pad muted">当前筛选条件下没有比赛。</div>
+      ) : (
+        <div style={{ display: 'grid', gap: '0.85rem', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
+          {filtered.map((m) => (
+            <div key={m.id}>
+              <div className="muted" style={{ fontSize: '0.75rem', marginBottom: '0.35rem' }}>
+                {m.group ? groupLabel(m.group) : m.stage}
+              </div>
+              <MatchCard match={m} teams={season.teams} showPredict />
             </div>
-            <MatchCard match={m} teams={season.teams} showPredict />
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   )
 }

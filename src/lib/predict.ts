@@ -1,4 +1,4 @@
-import type { Match, PredictResult, StandingRow, Team } from '@/types'
+import type { Match, PredictResult, Team } from '@/types'
 
 const ELO_K = 32
 const ELO_INIT = 1500
@@ -134,14 +134,6 @@ export function buildH2HMatrix(
     }
   }
   return matrix
-}
-
-export function sortStandingRows(rows: StandingRow[]): StandingRow[] {
-  return [...rows].sort((a, b) => {
-    if (b.points !== a.points) return b.points - a.points
-    if (b.gameDiff !== a.gameDiff) return b.gameDiff - a.gameDiff
-    return b.gameWins - a.gameWins
-  })
 }
 
 export const PREDICT_WEIGHTS = { elo: W_ELO, form: W_FORM, h2h: W_H2H, k: ELO_K, init: ELO_INIT }
