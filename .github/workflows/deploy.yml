@@ -3,6 +3,8 @@ name: Deploy GitHub Pages
 on:
   push:
     branches: [main, cursor/kpl-de14]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -11,7 +13,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -27,11 +29,15 @@ jobs:
       - run: npm run validate-data
       - run: npm test
       - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
+      - name: Upload Pages artifact
+        if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
   deploy:
+    # GitHub Pages 需在仓库 Settings → Pages 中启用（Source = GitHub Actions）
+    if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
     needs: build
     runs-on: ubuntu-latest
     environment:

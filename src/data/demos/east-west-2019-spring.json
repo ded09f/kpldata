@@ -1,0 +1,50 @@
+{
+  "id": "demo-2019-spring-east-west",
+  "title": "2019 春季赛东西部积分榜（演示）",
+  "note": "摘要演示数据，用于展示东西部双栏排行组件；非完整官方逐场复原。",
+  "formatKind": "east-west",
+  "teams": [
+    { "id": "estar", "name": "eStarPro", "shortName": "eStar", "color": "#2563EB" },
+    { "id": "hero", "name": "Hero久竞", "shortName": "Hero", "color": "#DC2626" },
+    { "id": "rng", "name": "RNG.M", "shortName": "RNG", "color": "#B91C1C" },
+    { "id": "ts", "name": "TS", "shortName": "TS", "color": "#0EA5E9" },
+    { "id": "ba", "name": "BA黑凤梨", "shortName": "BA", "color": "#F59E0B" },
+    { "id": "vg", "name": "VG", "shortName": "VG", "color": "#64748B" },
+    { "id": "ag", "name": "AG超玩会", "shortName": "AG", "color": "#E11D48" },
+    { "id": "qg", "name": "QGhappy", "shortName": "QG", "color": "#7C3AED" },
+    { "id": "edg", "name": "EDG.M", "shortName": "EDG", "color": "#111827" },
+    { "id": "we", "name": "WE", "shortName": "WE", "color": "#DB2777" },
+    { "id": "rw", "name": "RW侠", "shortName": "RW", "color": "#0891B2" },
+    { "id": "dyg", "name": "DYG", "shortName": "DYG", "color": "#F97316" }
+  ],
+  "standings": [
+    {
+      "stage": "regular",
+      "label": "常规赛 · 东西部",
+      "tables": [
+        {
+          "group": "East",
+          "rows": [
+            { "teamId": "estar", "rank": 1, "played": 14, "wins": 11, "losses": 3, "points": 11, "gameWins": 28, "gameLosses": 14, "gameDiff": 14, "qualification": "playoff" },
+            { "teamId": "hero", "rank": 2, "played": 14, "wins": 10, "losses": 4, "points": 10, "gameWins": 26, "gameLosses": 16, "gameDiff": 10, "qualification": "playoff" },
+            { "teamId": "rng", "rank": 3, "played": 14, "wins": 8, "losses": 6, "points": 8, "gameWins": 22, "gameLosses": 20, "gameDiff": 2, "qualification": "playoff" },
+            { "teamId": "ts", "rank": 4, "played": 14, "wins": 7, "losses": 7, "points": 7, "gameWins": 20, "gameLosses": 21, "gameDiff": -1, "qualification": "playoff" },
+            { "teamId": "ba", "rank": 5, "played": 14, "wins": 5, "losses": 9, "points": 5, "gameWins": 16, "gameLosses": 24, "gameDiff": -8, "qualification": "relegation" },
+            { "teamId": "vg", "rank": 6, "played": 14, "wins": 3, "losses": 11, "points": 3, "gameWins": 12, "gameLosses": 28, "gameDiff": -16, "qualification": "relegation" }
+          ]
+        },
+        {
+          "group": "West",
+          "rows": [
+            { "teamId": "ag", "rank": 1, "played": 14, "wins": 12, "losses": 2, "points": 12, "gameWins": 30, "gameLosses": 12, "gameDiff": 18, "qualification": "playoff" },
+            { "teamId": "qg", "rank": 2, "played": 14, "wins": 9, "losses": 5, "points": 9, "gameWins": 24, "gameLosses": 18, "gameDiff": 6, "qualification": "playoff" },
+            { "teamId": "edg", "rank": 3, "played": 14, "wins": 8, "losses": 6, "points": 8, "gameWins": 23, "gameLosses": 19, "gameDiff": 4, "qualification": "playoff" },
+            { "teamId": "we", "rank": 4, "played": 14, "wins": 6, "losses": 8, "points": 6, "gameWins": 18, "gameLosses": 22, "gameDiff": -4, "qualification": "playoff" },
+            { "teamId": "rw", "rank": 5, "played": 14, "wins": 5, "losses": 9, "points": 5, "gameWins": 17, "gameLosses": 24, "gameDiff": -7, "qualification": "relegation" },
+            { "teamId": "dyg", "rank": 6, "played": 14, "wins": 4, "losses": 10, "points": 4, "gameWins": 14, "gameLosses": 26, "gameDiff": -12, "qualification": "relegation" }
+          ]
+        }
+      ]
+    }
+  ]
+}

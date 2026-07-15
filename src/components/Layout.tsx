@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from 'react-router-dom'
 import { META, SEASON_INDEX } from '@/data/catalog'
+import { SeasonSwitcher } from '@/components/SeasonSwitcher'
 import { formatDate } from '@/lib/formatters'
 
 const links = [
@@ -38,28 +39,31 @@ export function Layout() {
             flexWrap: 'wrap',
           }}
         >
-          <NavLink to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-            <span
-              style={{
-                width: 34,
-                height: 34,
-                borderRadius: 10,
-                background: 'linear-gradient(135deg,#F5A524,#3B82F6)',
-                display: 'grid',
-                placeItems: 'center',
-                fontWeight: 900,
-                color: '#0B0F19',
-              }}
-            >
-              K
-            </span>
-            <div>
-              <div style={{ fontWeight: 800, letterSpacing: '0.02em' }}>KPL Data</div>
-              <div className="muted" style={{ fontSize: '0.75rem' }}>
-                默认 · 2026 夏季赛
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+            <NavLink to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+              <span
+                style={{
+                  width: 34,
+                  height: 34,
+                  borderRadius: 10,
+                  background: 'linear-gradient(135deg,#F5A524,#3B82F6)',
+                  display: 'grid',
+                  placeItems: 'center',
+                  fontWeight: 900,
+                  color: '#0B0F19',
+                }}
+              >
+                K
+              </span>
+              <div>
+                <div style={{ fontWeight: 800, letterSpacing: '0.02em' }}>KPL Data</div>
+                <div className="muted" style={{ fontSize: '0.75rem' }}>
+                  默认 · 2026 夏季赛
+                </div>
               </div>
-            </div>
-          </NavLink>
+            </NavLink>
+            <SeasonSwitcher />
+          </div>
           <nav style={{ display: 'flex', gap: '0.25rem', flexWrap: 'wrap' }}>
             {links.map((l) => (
               <NavLink

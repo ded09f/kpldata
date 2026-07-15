@@ -44,9 +44,12 @@ npm run validate-data
 
 ## GitHub Pages 部署
 
-1. 仓库 Settings → Pages → Source 选择 **GitHub Actions**
-2. 推送到 `main`（或本仓库已配置的分支）触发 `.github/workflows/deploy.yml`
-3. 等待 Actions 成功后访问 `https://ded09f.github.io/kpldata/`
+1. 打开仓库 **Settings → Pages**
+2. **Source** 选择 **GitHub Actions**（必须先启用，否则 deploy 会 404）
+3. 将改动合并到 `main`（或在 Actions 里手动跑 `workflow_dispatch`）
+4. 等待 workflow 成功后访问：<https://ded09f.github.io/kpldata/>
+
+说明：功能分支上的 CI 只会跑校验/测试/构建，**不会**尝试部署，避免未开启 Pages 时出现红色失败。
 
 ## 预测模型说明
 

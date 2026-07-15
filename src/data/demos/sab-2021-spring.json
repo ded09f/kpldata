@@ -1,0 +1,67 @@
+{
+  "id": "demo-2021-spring-sab",
+  "title": "2021 春季赛 SAB 分组（演示）",
+  "note": "摘要演示数据，用于展示 SAB 分组排行与晋级色条；积分与名次为示意。",
+  "formatKind": "sab",
+  "teams": [
+    { "id": "hero", "name": "南京Hero久竞", "shortName": "Hero", "color": "#DC2626" },
+    { "id": "ag", "name": "成都AG超玩会", "shortName": "AG", "color": "#E11D48" },
+    { "id": "estar", "name": "武汉eStarPro", "shortName": "eStar", "color": "#2563EB" },
+    { "id": "wolves", "name": "重庆狼队", "shortName": "狼队", "color": "#7C3AED" },
+    { "id": "ttg", "name": "广州TTG", "shortName": "TTG", "color": "#CA8A04" },
+    { "id": "wb", "name": "北京WB", "shortName": "WB", "color": "#EAB308" },
+    { "id": "edg", "name": "上海EDG.M", "shortName": "EDG", "color": "#111827" },
+    { "id": "dyg", "name": "深圳DYG", "shortName": "DYG", "color": "#F97316" },
+    { "id": "we", "name": "西安WE", "shortName": "WE", "color": "#DB2777" },
+    { "id": "rw", "name": "济南RW侠", "shortName": "RW", "color": "#0891B2" },
+    { "id": "rng", "name": "上海RNG.M", "shortName": "RNG", "color": "#B91C1C" },
+    { "id": "tes", "name": "长沙TES.A", "shortName": "TES", "color": "#4F46E5" },
+    { "id": "lgd", "name": "杭州LGD大鹅", "shortName": "LGD", "color": "#16A34A" },
+    { "id": "gk", "name": "佛山GK", "shortName": "GK", "color": "#0EA5E9" },
+    { "id": "ksg", "name": "苏州KSG", "shortName": "KSG", "color": "#F59E0B" },
+    { "id": "vg", "name": "厦门VG", "shortName": "VG", "color": "#64748B" },
+    { "id": "mtg", "name": "MTG", "shortName": "MTG", "color": "#94A3B8" },
+    { "id": "xyg", "name": "XYG", "shortName": "XYG", "color": "#14B8A6" }
+  ],
+  "standings": [
+    {
+      "stage": "stage2",
+      "label": "第二轮 · S/A/B",
+      "tables": [
+        {
+          "group": "S",
+          "rows": [
+            { "teamId": "hero", "rank": 1, "played": 5, "wins": 4, "losses": 1, "points": 4, "gameWins": 13, "gameLosses": 7, "gameDiff": 6, "qualification": "S3" },
+            { "teamId": "ag", "rank": 2, "played": 5, "wins": 4, "losses": 1, "points": 4, "gameWins": 12, "gameLosses": 8, "gameDiff": 4, "qualification": "S3" },
+            { "teamId": "estar", "rank": 3, "played": 5, "wins": 3, "losses": 2, "points": 3, "gameWins": 11, "gameLosses": 9, "gameDiff": 2, "qualification": "S3" },
+            { "teamId": "wolves", "rank": 4, "played": 5, "wins": 2, "losses": 3, "points": 2, "gameWins": 9, "gameLosses": 11, "gameDiff": -2, "qualification": "S3" },
+            { "teamId": "ttg", "rank": 5, "played": 5, "wins": 2, "losses": 3, "points": 2, "gameWins": 8, "gameLosses": 11, "gameDiff": -3, "qualification": "seat-SA" },
+            { "teamId": "wb", "rank": 6, "played": 5, "wins": 0, "losses": 5, "points": 0, "gameWins": 5, "gameLosses": 15, "gameDiff": -10, "qualification": "seat-SA" }
+          ]
+        },
+        {
+          "group": "A",
+          "rows": [
+            { "teamId": "edg", "rank": 1, "played": 5, "wins": 4, "losses": 1, "points": 4, "gameWins": 12, "gameLosses": 7, "gameDiff": 5, "qualification": "seat-SA" },
+            { "teamId": "dyg", "rank": 2, "played": 5, "wins": 3, "losses": 2, "points": 3, "gameWins": 11, "gameLosses": 9, "gameDiff": 2, "qualification": "seat-SA" },
+            { "teamId": "we", "rank": 3, "played": 5, "wins": 3, "losses": 2, "points": 3, "gameWins": 10, "gameLosses": 10, "gameDiff": 0, "qualification": "A3" },
+            { "teamId": "rw", "rank": 4, "played": 5, "wins": 2, "losses": 3, "points": 2, "gameWins": 9, "gameLosses": 11, "gameDiff": -2, "qualification": "A3" },
+            { "teamId": "rng", "rank": 5, "played": 5, "wins": 2, "losses": 3, "points": 2, "gameWins": 8, "gameLosses": 11, "gameDiff": -3, "qualification": "seat-AB" },
+            { "teamId": "tes", "rank": 6, "played": 5, "wins": 1, "losses": 4, "points": 1, "gameWins": 7, "gameLosses": 13, "gameDiff": -6, "qualification": "seat-AB" }
+          ]
+        },
+        {
+          "group": "B",
+          "rows": [
+            { "teamId": "lgd", "rank": 1, "played": 5, "wins": 4, "losses": 1, "points": 4, "gameWins": 13, "gameLosses": 6, "gameDiff": 7, "qualification": "seat-AB" },
+            { "teamId": "gk", "rank": 2, "played": 5, "wins": 3, "losses": 2, "points": 3, "gameWins": 11, "gameLosses": 9, "gameDiff": 2, "qualification": "seat-AB" },
+            { "teamId": "ksg", "rank": 3, "played": 5, "wins": 3, "losses": 2, "points": 3, "gameWins": 10, "gameLosses": 10, "gameDiff": 0, "qualification": "elim" },
+            { "teamId": "vg", "rank": 4, "played": 5, "wins": 2, "losses": 3, "points": 2, "gameWins": 9, "gameLosses": 11, "gameDiff": -2, "qualification": "elim" },
+            { "teamId": "mtg", "rank": 5, "played": 5, "wins": 2, "losses": 3, "points": 2, "gameWins": 8, "gameLosses": 12, "gameDiff": -4, "qualification": "elim" },
+            { "teamId": "xyg", "rank": 6, "played": 5, "wins": 1, "losses": 4, "points": 1, "gameWins": 6, "gameLosses": 13, "gameDiff": -7, "qualification": "elim" }
+          ]
+        }
+      ]
+    }
+  ]
+}

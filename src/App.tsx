@@ -8,6 +8,7 @@ import { PredictPage } from '@/pages/PredictPage'
 import { TeamsPage } from '@/pages/TeamsPage'
 import { RulesPage } from '@/pages/RulesPage'
 import { ArchivePage } from '@/pages/ArchivePage'
+import { ArchiveDetailPage } from '@/pages/ArchiveDetailPage'
 import { AboutPage } from '@/pages/AboutPage'
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="teams" element={<TeamsPage />} />
           <Route path="rules" element={<RulesPage />} />
           <Route path="archive" element={<ArchivePage />} />
+          <Route path="archive/:seasonId" element={<ArchiveDetailPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>

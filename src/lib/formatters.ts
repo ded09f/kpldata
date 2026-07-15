@@ -88,15 +88,17 @@ export function qualificationLabel(q?: string): string {
     'seat-SA': '卡位赛 S↔A',
     'seat-AB': '卡位赛 A↔B',
     elim: '淘汰区',
+    playoff: '晋级季后赛',
+    relegation: '保级区',
   }
   return map[q] ?? q
 }
 
 export function qualificationClass(q?: string): string {
   if (!q) return ''
-  if (q === 'S' || q === 'S3') return 'qual-s'
+  if (q === 'S' || q === 'S3' || q === 'playoff') return 'qual-s'
   if (q === 'A' || q === 'A3') return 'qual-a'
-  if (q === 'B' || q === 'elim') return 'qual-b'
+  if (q === 'B' || q === 'elim' || q === 'relegation') return 'qual-b'
   if (q.startsWith('seat')) return 'qual-seat'
   return ''
 }
