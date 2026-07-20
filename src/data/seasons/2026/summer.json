@@ -457,74 +457,74 @@
           "group": "S",
           "rows": [
             {
-              "teamId": "wb",
-              "played": 2,
-              "wins": 2,
+              "teamId": "ttg",
+              "played": 3,
+              "wins": 3,
               "losses": 0,
-              "points": 2,
-              "gameWins": 6,
+              "points": 3,
+              "gameWins": 9,
               "gameLosses": 2,
-              "gameDiff": 4,
+              "gameDiff": 7,
               "rank": 1,
               "qualification": "S3"
             },
             {
-              "teamId": "ttg",
-              "played": 1,
-              "wins": 1,
+              "teamId": "wb",
+              "played": 3,
+              "wins": 3,
               "losses": 0,
-              "points": 1,
-              "gameWins": 3,
-              "gameLosses": 0,
-              "gameDiff": 3,
+              "points": 3,
+              "gameWins": 9,
+              "gameLosses": 2,
+              "gameDiff": 7,
               "rank": 2,
               "qualification": "S3"
             },
             {
               "teamId": "jdg",
-              "played": 2,
-              "wins": 1,
-              "losses": 1,
-              "points": 1,
-              "gameWins": 4,
-              "gameLosses": 3,
-              "gameDiff": 1,
+              "played": 4,
+              "wins": 2,
+              "losses": 2,
+              "points": 2,
+              "gameWins": 7,
+              "gameLosses": 7,
+              "gameDiff": 0,
               "rank": 3,
               "qualification": "S3"
             },
             {
               "teamId": "ag",
-              "played": 2,
-              "wins": 1,
-              "losses": 1,
-              "points": 1,
-              "gameWins": 3,
-              "gameLosses": 4,
+              "played": 4,
+              "wins": 2,
+              "losses": 2,
+              "points": 2,
+              "gameWins": 8,
+              "gameLosses": 9,
               "gameDiff": -1,
               "rank": 4,
               "qualification": "S3"
             },
             {
-              "teamId": "lgd",
-              "played": 1,
+              "teamId": "ksg",
+              "played": 3,
               "wins": 0,
-              "losses": 1,
+              "losses": 3,
               "points": 0,
-              "gameWins": 0,
-              "gameLosses": 3,
-              "gameDiff": -3,
+              "gameWins": 4,
+              "gameLosses": 9,
+              "gameDiff": -5,
               "rank": 5,
               "qualification": "seat-SA"
             },
             {
-              "teamId": "ksg",
-              "played": 2,
+              "teamId": "lgd",
+              "played": 3,
               "wins": 0,
-              "losses": 2,
+              "losses": 3,
               "points": 0,
-              "gameWins": 2,
-              "gameLosses": 6,
-              "gameDiff": -4,
+              "gameWins": 1,
+              "gameLosses": 9,
+              "gameDiff": -8,
               "rank": 6,
               "qualification": "seat-SA"
             }
@@ -535,72 +535,72 @@
           "rows": [
             {
               "teamId": "wolves",
-              "played": 2,
-              "wins": 2,
+              "played": 3,
+              "wins": 3,
               "losses": 0,
-              "points": 2,
-              "gameWins": 6,
-              "gameLosses": 2,
-              "gameDiff": 4,
+              "points": 3,
+              "gameWins": 9,
+              "gameLosses": 4,
+              "gameDiff": 5,
               "rank": 1,
               "qualification": "seat-SA"
             },
             {
               "teamId": "syg",
-              "played": 2,
+              "played": 3,
               "wins": 2,
-              "losses": 0,
+              "losses": 1,
               "points": 2,
-              "gameWins": 6,
-              "gameLosses": 3,
-              "gameDiff": 3,
+              "gameWins": 8,
+              "gameLosses": 6,
+              "gameDiff": 2,
               "rank": 2,
               "qualification": "seat-SA"
             },
             {
               "teamId": "tes",
-              "played": 2,
-              "wins": 1,
+              "played": 3,
+              "wins": 2,
               "losses": 1,
-              "points": 1,
-              "gameWins": 4,
+              "points": 2,
+              "gameWins": 7,
               "gameLosses": 5,
-              "gameDiff": -1,
+              "gameDiff": 2,
               "rank": 3,
               "qualification": "A3"
             },
             {
               "teamId": "hero",
-              "played": 1,
-              "wins": 0,
-              "losses": 1,
-              "points": 0,
-              "gameWins": 2,
-              "gameLosses": 3,
-              "gameDiff": -1,
+              "played": 3,
+              "wins": 1,
+              "losses": 2,
+              "points": 1,
+              "gameWins": 5,
+              "gameLosses": 7,
+              "gameDiff": -2,
               "rank": 4,
               "qualification": "A3"
             },
             {
-              "teamId": "rw",
-              "played": 2,
-              "wins": 0,
+              "teamId": "edg",
+              "played": 3,
+              "wins": 1,
               "losses": 2,
-              "points": 0,
+              "points": 1,
               "gameWins": 4,
-              "gameLosses": 6,
-              "gameDiff": -2,
+              "gameLosses": 8,
+              "gameDiff": -4,
               "rank": 5,
               "qualification": "seat-AB"
             },
             {
-              "teamId": "edg",
-              "played": 1,
+              "teamId": "rw",
+              "played": 3,
               "wins": 0,
-              "losses": 1,
+              "losses": 3,
               "points": 0,
-              "gameWins": 0,
-              "gameLosses": 3,
+              "gameWins": 6,
+              "gameLosses": 9,
               "gameDiff": -3,
               "rank": 6,
               "qualification": "seat-AB"
@@ -612,27 +612,39 @@
           "rows": [
             {
               "teamId": "wst",
-              "played": 2,
-              "wins": 2,
+              "played": 3,
+              "wins": 3,
               "losses": 0,
-              "points": 2,
-              "gameWins": 5,
-              "gameLosses": 2,
-              "gameDiff": 3,
+              "points": 3,
+              "gameWins": 9,
+              "gameLosses": 4,
+              "gameDiff": 5,
               "rank": 1,
               "qualification": "seat-AB"
             },
             {
-              "teamId": "drg",
-              "played": 1,
-              "wins": 1,
-              "losses": 0,
-              "points": 1,
-              "gameWins": 3,
-              "gameLosses": 0,
+              "teamId": "rng",
+              "played": 3,
+              "wins": 2,
+              "losses": 1,
+              "points": 2,
+              "gameWins": 8,
+              "gameLosses": 5,
               "gameDiff": 3,
               "rank": 2,
               "qualification": "seat-AB"
+            },
+            {
+              "teamId": "drg",
+              "played": 3,
+              "wins": 1,
+              "losses": 2,
+              "points": 1,
+              "gameWins": 6,
+              "gameLosses": 6,
+              "gameDiff": 0,
+              "rank": 3,
+              "qualification": "elim"
             },
             {
               "teamId": "we",
@@ -640,45 +652,33 @@
               "wins": 1,
               "losses": 1,
               "points": 1,
-              "gameWins": 4,
-              "gameLosses": 4,
+              "gameWins": 5,
+              "gameLosses": 5,
               "gameDiff": 0,
-              "rank": 3,
-              "qualification": "elim"
-            },
-            {
-              "teamId": "rng",
-              "played": 1,
-              "wins": 0,
-              "losses": 1,
-              "points": 0,
-              "gameWins": 2,
-              "gameLosses": 3,
-              "gameDiff": -1,
               "rank": 4,
               "qualification": "elim"
             },
             {
-              "teamId": "dyg",
-              "played": 1,
-              "wins": 0,
+              "teamId": "esp",
+              "played": 2,
+              "wins": 1,
               "losses": 1,
-              "points": 0,
-              "gameWins": 1,
-              "gameLosses": 3,
-              "gameDiff": -2,
+              "points": 1,
+              "gameWins": 3,
+              "gameLosses": 4,
+              "gameDiff": -1,
               "rank": 5,
               "qualification": "elim"
             },
             {
-              "teamId": "esp",
-              "played": 1,
+              "teamId": "dyg",
+              "played": 3,
               "wins": 0,
-              "losses": 1,
+              "losses": 3,
               "points": 0,
-              "gameWins": 0,
-              "gameLosses": 3,
-              "gameDiff": -3,
+              "gameWins": 2,
+              "gameLosses": 9,
+              "gameDiff": -7,
               "rank": 6,
               "qualification": "elim"
             }
@@ -1568,8 +1568,8 @@
       "home": "we",
       "away": "wst",
       "score": {
-        "home": 1,
-        "away": 2
+        "home": 2,
+        "away": 3
       },
       "winner": "wst"
     },
@@ -1577,13 +1577,16 @@
       "id": "stage2-015",
       "stage": "stage2",
       "group": "A",
-      "date": "2026-07-15T20:00:00+08:00",
+      "date": "2026-07-15T20:19:00+08:00",
       "bo": 5,
-      "status": "scheduled",
+      "status": "completed",
       "home": "hero",
       "away": "edg",
-      "score": null,
-      "winner": null
+      "score": {
+        "home": 3,
+        "away": 1
+      },
+      "winner": "hero"
     },
     {
       "id": "stage2-016",
@@ -1591,35 +1594,44 @@
       "group": "B",
       "date": "2026-07-16T14:00:00+08:00",
       "bo": 5,
-      "status": "scheduled",
+      "status": "completed",
       "home": "drg",
       "away": "rng",
-      "score": null,
-      "winner": null
+      "score": {
+        "home": 2,
+        "away": 3
+      },
+      "winner": "rng"
     },
     {
       "id": "stage2-017",
       "stage": "stage2",
       "group": "B",
-      "date": "2026-07-16T17:00:00+08:00",
+      "date": "2026-07-16T17:35:00+08:00",
       "bo": 5,
-      "status": "scheduled",
+      "status": "completed",
       "home": "esp",
       "away": "dyg",
-      "score": null,
-      "winner": null
+      "score": {
+        "home": 3,
+        "away": 1
+      },
+      "winner": "esp"
     },
     {
       "id": "stage2-018",
       "stage": "stage2",
       "group": "S",
-      "date": "2026-07-16T20:00:00+08:00",
+      "date": "2026-07-16T20:04:00+08:00",
       "bo": 5,
-      "status": "scheduled",
+      "status": "completed",
       "home": "jdg",
       "away": "ttg",
-      "score": null,
-      "winner": null
+      "score": {
+        "home": 0,
+        "away": 3
+      },
+      "winner": "ttg"
     },
     {
       "id": "stage2-019",
@@ -1627,11 +1639,14 @@
       "group": "A",
       "date": "2026-07-17T14:00:00+08:00",
       "bo": 5,
-      "status": "scheduled",
+      "status": "completed",
       "home": "hero",
       "away": "tes",
-      "score": null,
-      "winner": null
+      "score": {
+        "home": 0,
+        "away": 3
+      },
+      "winner": "tes"
     },
     {
       "id": "stage2-020",
@@ -1639,11 +1654,14 @@
       "group": "S",
       "date": "2026-07-17T17:00:00+08:00",
       "bo": 5,
-      "status": "scheduled",
+      "status": "completed",
       "home": "lgd",
       "away": "wb",
-      "score": null,
-      "winner": null
+      "score": {
+        "home": 0,
+        "away": 3
+      },
+      "winner": "wb"
     },
     {
       "id": "stage2-021",
@@ -1651,11 +1669,14 @@
       "group": "S",
       "date": "2026-07-17T20:00:00+08:00",
       "bo": 5,
-      "status": "scheduled",
+      "status": "completed",
       "home": "ag",
       "away": "ksg",
-      "score": null,
-      "winner": null
+      "score": {
+        "home": 3,
+        "away": 2
+      },
+      "winner": "ag"
     },
     {
       "id": "stage2-022",
@@ -1663,23 +1684,29 @@
       "group": "B",
       "date": "2026-07-18T14:00:00+08:00",
       "bo": 5,
-      "status": "scheduled",
+      "status": "completed",
       "home": "drg",
       "away": "wst",
-      "score": null,
-      "winner": null
+      "score": {
+        "home": 1,
+        "away": 3
+      },
+      "winner": "wst"
     },
     {
       "id": "stage2-023",
       "stage": "stage2",
       "group": "B",
-      "date": "2026-07-18T17:00:00+08:00",
+      "date": "2026-07-18T17:23:00+08:00",
       "bo": 5,
-      "status": "scheduled",
+      "status": "completed",
       "home": "rng",
       "away": "dyg",
-      "score": null,
-      "winner": null
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "winner": "rng"
     },
     {
       "id": "stage2-024",
@@ -1687,11 +1714,14 @@
       "group": "A",
       "date": "2026-07-18T20:00:00+08:00",
       "bo": 5,
-      "status": "scheduled",
+      "status": "completed",
       "home": "wolves",
       "away": "syg",
-      "score": null,
-      "winner": null
+      "score": {
+        "home": 3,
+        "away": 2
+      },
+      "winner": "wolves"
     },
     {
       "id": "stage2-025",
@@ -1699,23 +1729,29 @@
       "group": "A",
       "date": "2026-07-19T14:00:00+08:00",
       "bo": 5,
-      "status": "scheduled",
+      "status": "completed",
       "home": "edg",
       "away": "rw",
-      "score": null,
-      "winner": null
+      "score": {
+        "home": 3,
+        "away": 2
+      },
+      "winner": "edg"
     },
     {
       "id": "stage2-026",
       "stage": "stage2",
       "group": "S",
-      "date": "2026-07-19T17:00:00+08:00",
+      "date": "2026-07-19T17:03:00+08:00",
       "bo": 5,
-      "status": "scheduled",
+      "status": "completed",
       "home": "lgd",
       "away": "jdg",
-      "score": null,
-      "winner": null
+      "score": {
+        "home": 1,
+        "away": 3
+      },
+      "winner": "jdg"
     },
     {
       "id": "stage2-027",
@@ -1723,11 +1759,14 @@
       "group": "S",
       "date": "2026-07-19T20:00:00+08:00",
       "bo": 5,
-      "status": "scheduled",
+      "status": "completed",
       "home": "ag",
       "away": "ttg",
-      "score": null,
-      "winner": null
+      "score": {
+        "home": 2,
+        "away": 3
+      },
+      "winner": "ttg"
     },
     {
       "id": "stage2-028",
@@ -2001,5 +2040,5 @@
     "https://liquipedia.net/honorofkings/King_Pro_League/2026/Summer",
     "https://pvp.qq.com/gicp/news/651/792782.html"
   ],
-  "updatedAt": "2026-07-15T18:00:00+08:00"
+  "updatedAt": "2026-07-20T21:33:12+08:00"
 }
